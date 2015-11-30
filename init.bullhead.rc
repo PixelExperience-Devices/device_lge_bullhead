@@ -163,7 +163,7 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
 
     # Subsytem Ramdump collection
-    write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
     write /sys/module/msm_poweroff/parameters/download_mode 0
 
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth
