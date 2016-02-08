@@ -413,8 +413,8 @@ service atfwd /system/bin/ATFWD-daemon
     user system
     group system radio
 
-on property:ro.debuggable=1
-    start ss_ramdump
+#on property:ro.debuggable=1
+#    start ss_ramdump
 
 service ss_ramdump /system/bin/subsystem_ramdump
     class main
