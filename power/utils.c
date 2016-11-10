@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2012-2016, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -42,7 +42,7 @@
 #define LOG_TAG "QCOMPowerHAL"
 #include <utils/Log.h>
 
-#define INTERACTION_BOOST
+//#define INTERACTION_BOOST
 
 static void *qcopt_handle;
 static int (*perf_lock_acq)(unsigned long handle, int duration,
