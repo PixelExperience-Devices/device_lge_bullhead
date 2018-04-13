@@ -379,4 +379,9 @@
    <!-- Enable system navigation keys. -->
    <bool name="config_supportSystemNavigationKeys">true</bool>
 
+    <!-- AOD -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    <bool name="config_displayBlanksAfterDoze">false</bool>
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
 </resources>

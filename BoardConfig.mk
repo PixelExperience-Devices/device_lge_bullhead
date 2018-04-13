@@ -30,17 +30,18 @@ TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 
 TARGET_NO_BOOTLOADER := true
 
-# Inline kernel
-KERNEL_TOOLCHAIN := /home/francois/DU/prebuilts/gcc/uber_9/bin
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+
+# Inline kernel building
+KERNEL_TOOLCHAIN := /home/lakshaypaypal/PE/prebuilts/uber_9/bin/
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/lge/bullhead
 TARGET_KERNEL_CONFIG := hydrogen_defconfig
-
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-
-TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096

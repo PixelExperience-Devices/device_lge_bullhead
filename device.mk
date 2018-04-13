@@ -19,6 +19,17 @@
 #
 # Everything in this directory will become public
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
+# setup dalvik vm configs.
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
+# Dexpreopt
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+
 # Enable support for chinook sensorhub
 TARGET_USES_CHINOOK_SENSORHUB := false
 
@@ -568,9 +579,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=23
-
-# setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # facelock properties
 PRODUCT_PROPERTY_OVERRIDES += \
