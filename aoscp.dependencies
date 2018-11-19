@@ -1,0 +1,12 @@
+[
+  {
+    "repository":  "kernel_lge_bullhead",
+    "target_path": "kernel/lge/bullhead",
+    "remote":      "aoscp"
+  },
+  {
+    "repository":  "proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+	"remote":      "aoscp"
+  }
+]
