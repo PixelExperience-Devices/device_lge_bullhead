@@ -9,5 +9,13 @@ allow radio ims_socket:sock_file write;
 
 allow radio persist_file:dir search;
 
+allow radio debugfs_kgsl:dir { search read open };
+allow radio debugfs_kgsl:file { read write getattr setattr };
+allow radio debugfs_kgsl_proc:dir { search read open };
+allow radio debugfs_kgsl_proc:file { read write getattr setattr };
+
 # Connect to ims service.
 #HACK allow radio ims:unix_stream_socket connectto;
+
+allow radio system_app_data_file:dir { search read open write add_name };
+allow radio system_app_data_file:file { read write getattr setattr open };

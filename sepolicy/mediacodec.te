@@ -1,0 +1,8 @@
+allow mediacodec kernel:system { module_request };
+
+# Allow mediacodec access to EGL device
+# Fixes various issues with video processing
+allow mediacodec debugfs_kgsl:dir { search read open };
+allow mediacodec debugfs_kgsl:file { write getattr setattr };
+allow mediacodec debugfs_kgsl_proc:dir { search read open };
+allow mediacodec debugfs_kgsl_proc:file { write getattr setattr };

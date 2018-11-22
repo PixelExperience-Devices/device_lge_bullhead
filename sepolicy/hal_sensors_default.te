@@ -1,0 +1,10 @@
+allow hal_sensors_default sensors_device:chr_file rw_file_perms;
+allow hal_sensors_default vendor_data_file:dir { search read write add_name create open };
+allow hal_sensors_default vendor_data_file:file { read write getattr setattr create open };
+allow hal_sensors_default uhid_device:chr_file { read write open ioctl };
+allow hal_sensors_default property_socket:sock_file { read write };
+allow hal_sensors_default init:unix_stream_socket { connectto read };
+allow hal_sensors_default persist_file:dir { search read write add_name };
+allow hal_sensors_default persist_file:file { read write getattr setattr open };
+allow hal_sensors_default persist_sensortool_file:file { read write getattr setattr open };
+allow hal_sensors_default contexthub_prop:property_service set;

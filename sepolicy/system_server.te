@@ -40,3 +40,14 @@ allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 
 # system_server calls the power HAL, which reads debugfs_rpm
 allow system_server debugfs_rpm:file { read open getattr };
+
+allow system_server debugfs_kgsl:dir { search read open };
+allow system_server debugfs_kgsl:file { read write getattr setattr };
+allow system_server debugfs_kgsl_proc:dir { search read open };
+allow system_server debugfs_kgsl_proc:file { read write getattr setattr open };
+allow system_server unlabeled:file { getattr setattr unlink };
+allow system_server vendor_data_file:dir { search read open };
+allow system_server vendor_data_file:file rw_file_perms;
+
+allow system_server crash_dump:process getpgid;
+

@@ -1,0 +1,4 @@
+allow mediaprovider debugfs_kgsl:dir { search read open };
+allow mediaprovider debugfs_kgsl:file { write getattr setattr };
+allow mediaprovider debugfs_kgsl_proc:dir { search read open };
+allow mediaprovider debugfs_kgsl_proc:file { write getattr setattr };

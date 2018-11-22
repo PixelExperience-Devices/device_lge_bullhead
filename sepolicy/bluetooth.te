@@ -1,0 +1,4 @@
+allow bluetooth debugfs_kgsl:dir { search read open };
+allow bluetooth debugfs_kgsl:file { read write getattr setattr };
+allow bluetooth debugfs_kgsl_proc:dir { search read open };
+allow bluetooth debugfs_kgsl_proc:file { read write getattr setattr };

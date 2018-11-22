@@ -58,6 +58,8 @@ allow netmgrd sysfs_usb:file write;
 
 allow netmgrd kernel:system module_request;
 
+allow netmgrd diag_device:chr_file rw_file_perms;
+
 # talk to cnd
 unix_socket_connect(netmgrd, cnd, cnd)
 

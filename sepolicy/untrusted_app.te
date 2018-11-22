@@ -1,0 +1,13 @@
+allow untrusted_app kernel:system { module_request };
+allow untrusted_app debugfs_kgsl:dir { search read open };
+allow untrusted_app debugfs_kgsl:file { write getattr setattr };
+allow untrusted_app debugfs_kgsl_proc:dir { search read open };
+allow untrusted_app debugfs_kgsl_proc:file { write getattr setattr };
+allow untrusted_app_25 debugfs_kgsl:dir { search read open };
+allow untrusted_app_25 debugfs_kgsl:file { write getattr setattr };
+allow untrusted_app_25 debugfs_kgsl_proc:dir { search read open };
+allow untrusted_app_25 debugfs_kgsl_proc:file { write getattr setattr };
+allow untrusted_app_27 debugfs_kgsl:dir { search read open };
+allow untrusted_app_27 debugfs_kgsl:file { write getattr setattr };
+allow untrusted_app_27 debugfs_kgsl_proc:dir { search read open };
+allow untrusted_app_27 debugfs_kgsl_proc:file { write getattr setattr };

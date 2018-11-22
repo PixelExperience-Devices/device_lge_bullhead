@@ -1,0 +1,1 @@
+allow drmserver kernel:system { module_request };

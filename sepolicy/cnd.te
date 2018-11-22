@@ -26,6 +26,12 @@ allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
 # create upd_socket to gather network info via ioctls (e.g. MTU size)
 allow cnd self:udp_socket { create ioctl };
 
+allow cnd sysfs_ssr:dir { search read open };
+allow cnd sysfs_ssr:file rw_file_perms;
+allow cnd sysfs_ssr:lnk_file { read open };
+
+allow cnd diag_device:chr_file rw_file_perms;
+
 userdebug_or_eng(`
   allow cnd smem_log_device:chr_file rw_file_perms;
 ')

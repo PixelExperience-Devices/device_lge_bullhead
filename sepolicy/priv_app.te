@@ -1,1 +1,12 @@
 allowxperm priv_app self:udp_socket ioctl { SIOCGIWESSID };
+allow priv_app sysfs_wlan0:dir search;
+allow priv_app sysfs_wlan0:file { read open getattr };
+allow priv_app sysfs_rmnet:dir search;
+allow priv_app sysfs_rmnet:file { read open getattr };
+allow priv_app debugfs_kgsl:dir { search read open };
+allow priv_app debugfs_kgsl:file { read write getattr setattr };
+allow priv_app debugfs_kgsl_proc:dir { search read open };
+allow priv_app debugfs_kgsl_proc:file { read write getattr setattr };
+allow priv_app sysfs_block:dir { search open };
+allow priv_app sysfs_block:file { read write open getattr setattr };
+allow priv_app sysfs:file { open read getattr };

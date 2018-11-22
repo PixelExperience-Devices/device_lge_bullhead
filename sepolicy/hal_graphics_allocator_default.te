@@ -1,1 +1,5 @@
+allow hal_graphics_allocator_default debugfs_kgsl:dir { search read open };
+allow hal_graphics_allocator_default debugfs_kgsl:file { read write getattr setattr };
+allow hal_graphics_allocator_default debugfs_kgsl_proc:dir { search read open };
+allow hal_graphics_allocator_default debugfs_kgsl_proc:file { read write getattr setattr };
 r_dir_file(hal_graphics_allocator_default, sysfs_graphics)

@@ -171,7 +171,23 @@
 /sys/devices/soc\.0/qpnp-smbcharger-[^/]*/power_supply/battery/system_temp_level                           u:object_r:sysfs_thermal:s0
 
 /sys/devices/virtual/nanohub/nanohub(/.*)? u:object_r:sysfs_nanoapp_cmd:s0
+/sys/devices/virtual/block(/.*)? u:object_r:sysfs_block:s0
 /sys/kernel/boot_adsp/boot         u:object_r:sysfs_audio:s0
+/sys/devices/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0(/.*)? u:object_r:sysfs_wlan0:s0
+/sys/kernel/debug/kgsl(/.*)?		u:object_r:debugfs_kgsl:s0
+#/sys/kernel/debug/kgsl/proc(/.*)?	u:object_r:debugfs_kgsl_proc:s0
+/sys/devices/soc.0/qpnp-smbcharger-17/power_supply/battery(/.*)? u:object_r:sysfs_battery:s0
+#/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0(/.*)? u:object_r:sysfs_mmcblk0:s0
+/sys/devices/soc.0/fd900000.qcom,mdss_mdp/qcom,mdss_fb_primary.182/leds/lcd-backlight(/.*)? u:object_r:sysfs_backlight:s0
+/sys/module/g_android/parameters(/.*)? u:object_r:sysfs_g_android_param:s0
+/sys/module/lge_handle_panic/parameters(/.*)? u:object_r:sysfs_lge_handle_panic_param:s0
+/sys/kernel/debug/rmt_storage(/.*)? u:object_r:debugfs_rmt_storage:s0
+/sys/kernel/mm/ksm(/.*)? u:object_r:sysfs_ksm:s0
+/sys/kernel/debug/kgsl/proc/*/mem u:object_r:debugfs_mem:s0
+/sys/devices/soc.0/leds-qpnp-25(/.*) u:object_r:sysfs_qpnp_25:s0
+/sys/devices/virtual/net(/.*)? u:object_r:sysfs_rmnet:s0
+#/sys/class/rfkill/rfkill0(/.*)? u:object_r:sysfs_rfkill:s0
+/sys/bus/msm_subsys/devices/subsys1(/.*) u:object_r:sysfs_subsys1:s0
 
 # NFC hal
 /system/bin/hw/nfc_hal_pn54x       u:object_r:nfc_hal_pn54x_exec:s0

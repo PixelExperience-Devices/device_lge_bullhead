@@ -9,3 +9,6 @@ genfscon proc /sys/kernel/sched_small_task       u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_boost            u:object_r:proc_kernel_sched:s0
 genfscon proc /debug/fwdump                      u:object_r:proc_wifi_dbg:s0
 genfscon proc /debugdriver/driverdump            u:object_r:proc_wifi_dbg:s0
+genfscon debugfs /kgsl/proc			 u:object_r:debugfs_kgsl_proc:s0
+genfscon sysfs /block/mmcblk0/queue		 u:object_r:sysfs_mmcblk0_queue:s0
+genfscon sysfs /class/rfkill/rfkill0		 u:object_r:sysfs_rfkill0:s0

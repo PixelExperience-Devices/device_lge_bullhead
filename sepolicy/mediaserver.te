@@ -12,3 +12,5 @@ allow mediaserver perfd:unix_stream_socket connectto;
 
 # needed for widevine classic
 allow mediaserver tee_device:chr_file { ioctl open read write };
+
+allow mediaserver kernel:system { module_request };

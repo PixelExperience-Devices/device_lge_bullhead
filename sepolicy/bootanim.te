@@ -1,0 +1,6 @@
+allow bootanim debugfs_kgsl:dir { search read open };
+allow bootanim debugfs_kgsl:file { read write getattr setattr };
+allow bootanim debugfs_kgsl_proc:dir { search read open };
+allow bootanim debugfs_kgsl_proc:file { read write getattr setattr };
+allow bootanim system_data_file:dir { search read open };
+allow bootanim system_data_file:file r_file_perms;

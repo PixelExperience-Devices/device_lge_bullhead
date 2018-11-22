@@ -30,3 +30,8 @@ allow perfd sysfs_power_management:file w_file_perms;
 dontaudit perfd self:capability kill;
 
 allow perfd cameraserver:process signull;
+
+#allow perfd perfd:capability { dac_override };
+
+allow perfd sysfs_ksm:dir { search read open };
+allow perfd sysfs_ksm:file rw_file_perms;

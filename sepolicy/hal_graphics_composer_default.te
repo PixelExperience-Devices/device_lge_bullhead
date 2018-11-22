@@ -1,0 +1,10 @@
+allow hal_graphics_composer_default hal_graphics_composer_default:netlink_kobject_uevent_socket { read create bind setopt };
+allow hal_graphics_composer_default servicemanager:binder { call transfer };
+allow hal_graphics_composer_default sysfs_graphics:dir search;
+allow hal_graphics_composer_default sysfs_graphics:file rw_file_perms;
+allow hal_graphics_composer_default sysfs_graphics:lnk_file { read write };
+allow hal_graphics_composer_default debugfs_kgsl:dir { search read open };
+allow hal_graphics_composer_default debugfs_kgsl:file { read write getattr setattr };
+allow hal_graphics_composer_default debugfs_kgsl_proc:dir { search read open };
+allow hal_graphics_composer_default debugfs_kgsl_proc:file { read write getattr setattr };
+allow hal_graphics_composer_default surfaceflinger_service:service_manager { add find };

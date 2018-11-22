@@ -1,2 +1,5 @@
 allow healthd sysfs_thermal:dir search;
 allow healthd sysfs_thermal:file { open read };
+allow healthd sysfs_battery:dir search;
+allow healthd sysfs_battery:file { open read getattr };
+allow healthd sysfs:file { open read getattr };

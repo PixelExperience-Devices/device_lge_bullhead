@@ -15,4 +15,6 @@ allow atfwd self:udp_socket create;
 
 allow atfwd atfwd_service:service_manager find;
 
+allow atfwd diag_device:chr_file rw_file_perms;
+
 set_prop(atfwd, radio_atfwd_prop)

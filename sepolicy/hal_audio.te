@@ -5,3 +5,5 @@ allow hal_audio perfd_data_file:dir search;
 allow hal_audio perfd_data_file:sock_file write;
 allow hal_audio perfd:unix_dgram_socket sendto;
 allow hal_audio perfd:unix_stream_socket connectto;
+
+allow hal_audio_default audio_data_file:dir search;

@@ -1,0 +1,4 @@
+allow hal_light_default sysfs_backlight:dir search;
+allow hal_light_default sysfs_backlight:file rw_file_perms;
+allow hal_light_default sysfs_qpnp_25:dir search;
+allow hal_light_default sysfs_qpnp_25:file rw_file_perms;

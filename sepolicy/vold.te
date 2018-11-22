@@ -12,3 +12,9 @@ allow vold swap_block_device:blk_file getattr;
 
 # read sys.listeners. sys.keymaster. properties
 get_prop(vold, qseecomtee_prop)
+
+# Allow vold to access mmcblk0 stats
+allow vold sysfs:dir { search read open };
+allow vold sysfs:file rw_file_perms;
+allow vold sysfs_block:dir { search read open };
+allow vold sysfs_block:file rw_file_perms;

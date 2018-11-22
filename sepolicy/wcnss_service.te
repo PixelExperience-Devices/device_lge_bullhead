@@ -12,5 +12,12 @@ allow wcnss_service smem_log_device:chr_file rw_file_perms;
 allow wcnss_service self:capability { setuid net_admin setgid };
 allow wcnss_service sysfs:file w_file_perms;
 allow wcnss_service sysfs_usb:file w_file_perms;
+allow wcnss_service sysfs_net:dir { search };
+allow wcnss_service sysfs_ssr:dir { search read open };
+allow wcnss_service sysfs_ssr:file rw_file_perms;
+allow wcnss_service sysfs_ssr:lnk_file { read open };
+allow wcnss_service sysfs_wlan0:dir { search read open };
+allow wcnss_service sysfs_wlan0:file rw_file_perms;
+allow wcnss_service sysfs_wlan0:lnk_file { read open };
 
 qmux_socket(wcnss_service)

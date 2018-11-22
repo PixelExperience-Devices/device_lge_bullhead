@@ -38,8 +38,14 @@ allow location self:socket create_socket_perms;
 
 allow location sensorservice_service:service_manager find;
 
+allow location sysfs_ssr:dir { search read open };
+allow location sysfs_ssr:file rw_file_perms;
+allow location sysfs_ssr:lnk_file { read open };
+
 # subsystem ramdump for debug builds
 userdebug_or_eng(`
     allow location sysfs_ssr:dir r_dir_perms;
     allow location sysfs_ssr:lnk_file read;
 ')
+
+allow location kernel:system { module_request };

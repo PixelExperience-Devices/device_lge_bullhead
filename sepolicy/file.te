@@ -85,3 +85,42 @@ type sysfs_nanoapp_cmd, sysfs_type, fs_type;
 
 # type for devstart
 type sysfs_audio, sysfs_type, fs_type;
+
+# type for memtrack
+type debugfs_kgsl, fs_type, debugfs_type;
+
+# type for healthd
+type sysfs_battery, fs_type, sysfs_type;
+
+# type for privapp
+type sysfs_wlan0, fs_type, sysfs_type;
+
+# type for storaged
+type sysfs_mmcblk0, fs_type, sysfs_type;
+
+# types for hal_light_default
+type sysfs_backlight, fs_type, sysfs_type;
+type sysfs_qpnp_25, fs_type, sysfs_type;
+
+# type for init
+type sysfs_g_android_param, fs_type, sysfs_type;
+type sysfs_lge_handle_panic_param, fs_type, sysfs_type;
+
+# type for rmt
+type debugfs_rmt_storage, fs_type, debugfs_type;
+
+# type for perfs
+type sysfs_ksm, fs_type, sysfs_type;
+
+# type for hal_memtrack_default
+type debugfs_mem, fs_type, debugfs_type;
+type debugfs_kgsl_proc, fs_type, debugfs_type;
+
+# type for netd
+type sysfs_rmnet, fs_type, sysfs_type;
+
+# type for init
+type sysfs_block, fs_type, sysfs_type;
+type sysfs_rfkill0, fs_type, sysfs_type;
+type sysfs_subsys1, fs_type, sysfs_type;
+type sysfs_mmcblk0_queue, fs_type, sysfs_type;
