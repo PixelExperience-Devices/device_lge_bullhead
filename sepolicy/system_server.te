@@ -48,6 +48,7 @@ allow system_server debugfs_kgsl_proc:file { read write getattr setattr open };
 allow system_server unlabeled:file { getattr setattr unlink };
 allow system_server vendor_data_file:dir { search read open };
 allow system_server vendor_data_file:file rw_file_perms;
+allow system_server vendor_data_file:dir write;
 
 allow system_server crash_dump:process getpgid;
 
