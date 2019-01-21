@@ -31,9 +31,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 TARGET_NO_BOOTLOADER := true
 
 # Inline kernel
+KERNEL_TOOLCHAIN := /home/francois/DU/prebuilts/gcc/uber_9/bin
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/lge/bullhead
-TARGET_KERNEL_CONFIG := aoscp_bullhead_defconfig
+TARGET_KERNEL_CONFIG := hydrogen_defconfig
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
