@@ -34,7 +34,7 @@ WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Inline kernel building
-KERNEL_TOOLCHAIN := /home/lakshaypaypal/PE/prebuilts/uber_9/bin/
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/uber_9/bin/
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/lge/bullhead
 TARGET_KERNEL_CONFIG := hydrogen_defconfig
