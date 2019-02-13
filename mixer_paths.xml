@@ -412,7 +412,6 @@
         <path name="deep-buffer-playback" />
         <path name="deep-buffer-playback headphones" />
     </path>
-
     <path name="echo-reference">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
     </path>
@@ -427,14 +426,6 @@
 
     <path name="bt-sco-echo-reference">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SEC_AUX_PCM_RX" />
-    </path>
-
-    <path name="echo-reference bt-sco">
-        <path name="bt-sco-echo-reference" />
-    </path>
-
-    <path name="echo-reference bt-sco-wb">
-        <path name="bt-sco-echo-reference" />
     </path>
 
     <path name="deep-buffer-playback hdmi">
@@ -466,16 +457,6 @@
     <path name="deep-buffer-playback speaker-and-usb-headphones">
         <path name="deep-buffer-playback usb-headphones" />
         <path name="deep-buffer-playback" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-bt-sco">
-      <path name="deep-buffer-playback" />
-      <path name="deep-buffer-playback bt-sco" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-bt-sco-wb">
-      <path name="deep-buffer-playback" />
-      <path name="deep-buffer-playback bt-sco-wb" />
     </path>
 
     <path name="low-latency-playback">
@@ -526,16 +507,6 @@
         <path name="low-latency-playback" />
     </path>
 
-    <path name="low-latency-playback speaker-and-bt-sco">
-      <path name="low-latency-playback" />
-      <path name="low-latency-playback bt-sco"  />
-    </path>
-
-    <path name="low-latency-playback speaker-and-bt-sco-wb">
-      <path name="low-latency-playback" />
-      <path name="low-latency-playback bt-sco-wb"  />
-    </path>
-
     <path name="audio-ull-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="1" />
     </path>
@@ -573,16 +544,6 @@
 
     <path name="audio-ull-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="1" />
-    </path>
-
-    <path name="audio-ull-playback speaker-and-bt-sco">
-      <path name="audio-ull-playback" />
-      <path name="audio-ull-playback bt-sco"  />
-    </path>
-
-    <path name="audio-ull-playback speaker-and-bt-sco-wb">
-      <path name="audio-ull-playback" />
-      <path name="audio-ull-playback bt-sco-wb"  />
     </path>
 
     <path name="multi-channel-playback hdmi">
@@ -634,16 +595,6 @@
 
     <path name="compress-offload-playback usb-headphones">
         <path name="compress-offload-playback afe-proxy" />
-    </path>
-
-    <path name="compress-offload-playback speaker-and-bt-sco">
-      <path name="compress-offload-playback" />
-      <path name="compress-offload-playback bt-sco"  />
-    </path>
-
-    <path name="compress-offload-playback speaker-and-bt-sco-wb">
-      <path name="compress-offload-playback" />
-      <path name="compress-offload-playback bt-sco-wb"  />
     </path>
 
     <path name="compress-offload-playback speaker-and-usb-headphones">
@@ -1046,7 +997,7 @@
     </path>
 
     <path name="low-latency-record bt-sco">
-      <ctl name="MultiMedia5 Mixer SEC_AUX_PCM_TX" value="1" />
+      <ctl name="MultiMedia5 Mixer SEC_AUX_PCM_UL_TX" value="1" />
     </path>
 
     <path name="low-latency-record bt-sco-wb">
@@ -1586,7 +1537,7 @@
     </path>
 
     <path name="spkr-gain-in-headphone-combo">
-        <ctl name="RX7 Digital Volume" value="90" />
+        <ctl name="RX7 Digital Volume" value="95" />
         <ctl name="SPK DRV Volume" value="8" />
     </path>
 
@@ -1600,11 +1551,19 @@
     </path>
 
     <path name="speaker">
-        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
-        <ctl name="SLIM_0_RX Channels" value="One" />
-        <ctl name="RX7 MIX1 INP1" value="RX1" />
-        <path name="speaker-gain-default" />
-        <ctl name="COMP0 Switch" value="1" />
+      <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+      <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
+      <ctl name="SLIM_0_RX Channels" value="Two" />
+      <ctl name="RX1 MIX1 INP1" value="RX1" />
+      <ctl name="RX1 MIX1 INP2" value="RX2" />
+      <ctl name="RX7 MIX1 INP1" value="RX1" />
+      <ctl name="RX7 MIX1 INP2" value="RX2" />
+      <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
+      <ctl name="DAC1 Switch" value="1" />
+      <ctl name="COMP0 Switch" value="1" />
+      <ctl name="HPHL DAC Switch" value="1" />
+      <ctl name="RX1 Digital Volume" value="87" />
+      <ctl name="RX7 Digital Volume" value="84" />
     </path>
 
     <path name="speaker-liquid">
@@ -1695,16 +1654,6 @@
     <path name="handset-mic">
         <path name="dmic1" />
         <ctl name="DEC7 Volume" value="84" />
-    </path>
-
-    <path name="unprocessed-handset-mic">
-        <path name="dmic1" />
-        <ctl name="DEC7 Volume" value="76" />
-    </path>
-
-    <path name="camcorder-handset-mic">
-        <path name="dmic1" />
-        <ctl name="DEC7 Volume" value="78" />
     </path>
 
     <path name="handset-mic-cdp">
@@ -1998,15 +1947,11 @@
 
     <path name="voice-rec-mic">
         <path name="handset-mic" />
-        <ctl name="DEC7 Volume" value="82" />
-    </path>
-
-    <path name="unprocessed-mic">
-        <path name="unprocessed-handset-mic" />
     </path>
 
     <path name="camcorder-mic">
-        <path name="camcorder-handset-mic" />
+        <path name="dmic3" />
+        <ctl name="DEC10 Volume" value="84" />
     </path>
 
     <path name="hdmi-tx">
@@ -2313,6 +2258,75 @@
     <path name="voice-tx">
     </path>
 
+
+    <path name="deep-buffer-playback bt-sco-and-speaker">
+        <path name="deep-buffer-playback bt-sco" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-and-speaker">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="deep-buffer-playback bt-sco-and-headphones">
+        <path name="deep-buffer-playback bt-sco" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-and-headphones">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="deep-buffer-playback bt-sco-and-headphones-and-speaker">
+        <path name="deep-buffer-playback bt-sco" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-and-headphones-and-speaker">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="voice-call bt-sco-and-speaker">
+        <path name="voice-call bt-sco" />
+    </path>
+
+    <path name="deep-buffer-playback bt-sco-wb-and-speaker">
+        <path name="deep-buffer-playback bt-sco-wb" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-wb-and-speaker">
+        <path name="low-latency-playback bt-sco-wb" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="deep-buffer-playback bt-sco-wb-and-headphones">
+        <path name="deep-buffer-playback bt-sco-wb" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-wb-and-headphones">
+        <path name="low-latency-playback bt-sco-wb" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="deep-buffer-playback bt-sco-wb-and-headphones-and-speaker">
+        <path name="deep-buffer-playback bt-sco-wb" />
+        <path name="deep-buffer-playback" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-wb-and-headphones-and-speaker">
+        <path name="low-latency-playback bt-sco-wb" />
+        <path name="low-latency-playback" />
+    </path>
+
+    <path name="voice-call bt-sco-wb-and-speaker">
+        <path name="voice-call bt-sco-wb" />
+    </path>
+
     <!-- voip loopback -->
     <path name="voip-loopback">
         <ctl name="SLIM_0_RX_Voice Mixer Voip" value="1" />
@@ -2329,26 +2343,5 @@
         <path name="voip-loopback bt-sco" />
     </path>
     <!--  voip loopback -->
-
-    <path name="unprocessed-stereo-mic">
-        <path name="voice-rec-dmic-ef" />
-        <ctl name="DEC7 Volume" value="76" />
-        <ctl name="DEC10 Volume" value="77" />
-    </path>
-
-    <path name="unprocessed-three-mic">
-        <path name="three-mic" />
-        <ctl name="DEC7 Volume" value="76" />
-        <ctl name="DEC10 Volume" value="77" />
-        <ctl name="DEC5 Volume" value="75" />
-    </path>
-
-    <path name="unprocessed-quad-mic">
-        <path name="quad-mic" />
-    </path>
-
-    <path name="unprocessed-headset-mic">
-        <path name="headset-mic" />
-    </path>
 
 </mixer>
