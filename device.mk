@@ -72,6 +72,19 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
 
+# AptX
+PRODUCT_COPY_FILES += \
+    device/lge/bullhead/aptx/lib/libaptX_encoder.so:system/lib/libaptX_encoder.so \
+    device/lge/bullhead/aptx/lib/libaptXHD_encoder.so:system/lib/libaptXHD_encoder.so \
+    device/lge/bullhead/aptx/lib64/libaptX_encoder.so:system/lib64/libaptX_encoder.so \
+    device/lge/bullhead/aptx/lib64/libaptXHD_encoder.so:system/lib64/libaptXHD_encoder.so \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bt.enableAptXHD=true \
+    persist.service.btui.use_aptx=1 \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
+
 #Sound Trigger
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
