@@ -34,7 +34,7 @@ WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Inline kernel building
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc_toolchain_9/bin/
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc_toolchain_10/bin/
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE := kernel/lge/bullhead
 TARGET_KERNEL_CONFIG := hydrogen_defconfig
