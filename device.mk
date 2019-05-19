@@ -300,6 +300,13 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl
 
+# Enable camera EIS
+# eis.enable: enables electronic image stabilization
+# is_type: sets image stabilization type
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.eis.enable=1 \
+    persist.camera.is_type=4
+
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
 NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
