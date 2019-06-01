@@ -1,0 +1,14 @@
+[
+  {
+    "repository"  : "francois133/flipflop",
+    "target_path" : "kernel/lge/bullhead",
+    "branch"      : "upstream_2",
+    "remote"      : "github"
+  },
+  {
+    "repository"  : "lakgarg/proprietary_vendor_lge",
+    "target_path" : "vendor/lge",
+    "branch"      : "p9.0",
+    "remote"      : "github"
+  }
+]
