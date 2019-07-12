@@ -10,5 +10,17 @@
     "target_path" : "vendor/lge",
     "branch"      : "p9.0",
     "remote"      : "github"
+  },
+  {
+    "repository"  : "lakgarg/device_google_contexthub",
+    "target_path" : "device/google/contexthub",
+    "branch"      : "master",
+    "remote"      : "github"
+  },
+  {
+    "repository"  : "francois133/gcc_10_toolchain",
+    "target_path" : "prebuilts/gcc_toolchain_10",
+    "branch"      : "master",
+    "remote"      : "gitlab"
   }
 ]
