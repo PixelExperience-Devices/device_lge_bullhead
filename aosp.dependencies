@@ -8,7 +8,7 @@
   {
     "repository"  : "lakgarg/proprietary_vendor_lge",
     "target_path" : "vendor/lge",
-    "branch"      : "p9.0",
+    "branch"      : "pie",
     "remote"      : "github"
   },
   {
