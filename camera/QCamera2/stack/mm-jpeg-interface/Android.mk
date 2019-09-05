@@ -9,7 +9,7 @@ LOCAL_CXX_STL := none
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 LOCAL_CFLAGS+= -D_ANDROID_
 
-LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
+LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter -Wno-error -Wno-sign-conversion -Wno-unused-value -Wno-pointer-bool-conversion
 
 LOCAL_C_INCLUDES+= $(kernel_includes)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
