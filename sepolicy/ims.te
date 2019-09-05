@@ -20,7 +20,7 @@ allow ims ims_socket:sock_file write;
 # talk to connectivity engine observer interface daemon (cnd)
 unix_socket_connect(ims, cnd, cnd)
 # talk to netd
-unix_socket_connect(ims, netd, netd)
+# unix_socket_connect(ims, netd, netd)
 # talk to qmux
 qmux_socket(ims)
 # communicate with the network driver
