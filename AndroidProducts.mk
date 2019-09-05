@@ -20,4 +20,4 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     aosp_bullhead-userdebug \
-    aosp_bullhead_svelte-userdebug
+    aosp_bullhead-eng
