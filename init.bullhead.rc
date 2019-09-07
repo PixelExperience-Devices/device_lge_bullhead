@@ -67,6 +67,16 @@ on init
     # NXP HAL expects /dev/pn54x
     symlink /dev/pn548 /dev/pn54x
 
+    # Create UDS structure for base VR services.
+    mkdir /dev/socket/pdx 0775 system system
+    mkdir /dev/socket/pdx/system 0775 system system
+    mkdir /dev/socket/pdx/system/buffer_hub 0775 system system
+    mkdir /dev/socket/pdx/system/performance 0775 system system
+    mkdir /dev/socket/pdx/system/vr 0775 system system
+    mkdir /dev/socket/pdx/system/vr/display 0775 system system
+    mkdir /dev/socket/pdx/system/vr/pose 0775 system system
+    mkdir /dev/socket/pdx/system/vr/sensors 0775 system system
+
     write /sys/block/zram0/comp_algorithm lz4
     write /sys/block/zram0/max_comp_streams 4
 
