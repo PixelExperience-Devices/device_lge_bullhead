@@ -192,6 +192,9 @@
 # NFC hal
 /system/bin/hw/nfc_hal_pn54x       u:object_r:nfc_hal_pn54x_exec:s0
 
+# files in firmware
+/firmware(/.*)?         u:object_r:firmware_file:s0
+
 # Persist files
 /persist(/.*)?                     u:object_r:persist_file:s0
 /persist/data(/.*)?                u:object_r:persist_data_file:s0
