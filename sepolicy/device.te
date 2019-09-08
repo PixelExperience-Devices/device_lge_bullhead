@@ -1,3 +1,5 @@
+type alarm_device, dev_type, mlstrustedobject;
+
 #Define the logging device type
 type diag_device, dev_type, mlstrustedobject;
 type smem_log_device, dev_type;
