@@ -314,11 +314,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.eis.enable=1 \
     persist.camera.is_type=4
 
-# Configstore HAL
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service
-    android.hardware.configstore@1.0-impl
-
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
 NANOHUB_SENSORHAL_LID_STATE_ENABLED := true
