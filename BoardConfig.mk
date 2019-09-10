@@ -35,14 +35,14 @@ WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Inline kernel building
-#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc_toolchain_10/bin
-#KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
-#TARGET_KERNEL_SOURCE := kernel/lge/bullhead
-#TARGET_KERNEL_CONFIG := flipflop_defconfig
-#BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-#TARGET_COMPILE_WITH_MSM_KERNEL := true
-#TARGET_KERNEL_ARCH := arm64
-#TARGET_KERNEL_HEADER_ARCH := arm64
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc_toolchain_10/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
+TARGET_KERNEL_SOURCE := kernel/lge/bullhead
+TARGET_KERNEL_CONFIG := flipflop_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
