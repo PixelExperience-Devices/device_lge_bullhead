@@ -64,12 +64,6 @@ on init
     # Load persistent dm-verity state
     verity_load_state
 
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
-    mkdir /firmware 0771 system system
-
-    symlink /sdcard /storage/sdcard0
-
     # NXP HAL expects /dev/pn54x
     symlink /dev/pn548 /dev/pn54x
 
@@ -266,6 +260,8 @@ on post-fs-data
 
     # Audio
     mkdir /data/misc/audio 0770 audio audio
+
+    setprop vold.decrypt trigger_restart_framework
 
     # perf daemon
     mkdir /data/misc/perfd 0755 root system
