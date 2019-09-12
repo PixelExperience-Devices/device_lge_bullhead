@@ -52,7 +52,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bullhead boot_cpus=0-5
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0
-BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive androidboot.boot_devices=soc.0/f9824900.sdhci
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
@@ -143,13 +143,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
-
-# system-as-root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_KERNEL_CMDLINE += skip_initramfs rootwait ro init=/init root=/dev/dm-0
-BOARD_KERNEL_CMDLINE += dm=\"system none ro,0 1 android-verity /dev/mmcblk0p43\"
-
-BOARD_ROOT_EXTRA_FOLDERS := firmware persist
 
 TARGET_RECOVERY_FSTAB = device/lge/bullhead/fstab.bullhead
 

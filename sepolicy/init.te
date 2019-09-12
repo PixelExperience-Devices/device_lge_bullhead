@@ -36,9 +36,3 @@ allow init sysfs_mmcblk0_queue:file rw_file_perms;
 # kgsl
 allow init debugfs_kgsl_proc:dir { search read open relabelfrom };
 allow init debugfs_kgsl_proc:file { read write getattr setattr };
-
-allow init firmware_file:dir mounton;
-allow init persist_file:dir mounton;
-allow init userdata_block_device:blk_file { write };
-
-allow init persist_block_device:lnk_file relabelto;
