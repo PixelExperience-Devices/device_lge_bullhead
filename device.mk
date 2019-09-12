@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
+    device/lge/bullhead/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     device/lge/bullhead/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     device/lge/bullhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/lge/bullhead/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
@@ -326,7 +326,7 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-service
 
 # new gatekeeper HAL
-PRODUCT_PACKAGES += \                         
+PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service   
 
