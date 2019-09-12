@@ -41,8 +41,8 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
     device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
     device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
-    device/lge/bullhead/init.qcom.devwait.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.qcom.devwait.sh \
-    device/lge/bullhead/init.qcom.devstart.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.qcom.devstart.sh
+    device/lge/bullhead/init.qcom.devwait.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devwait.sh \
+    device/lge/bullhead/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
@@ -162,15 +162,15 @@ PRODUCT_COPY_FILES += \
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.power.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.bullhead.power.sh
+    device/lge/bullhead/init.bullhead.power.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.power.sh
 
 # MBN
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.bullhead.sh
+    device/lge/bullhead/init.bullhead.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.sh
 
 # Qseecomd configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.qseecomd.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.bullhead.qseecomd.sh
+    device/lge/bullhead/init.bullhead.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.qseecomd.sh
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 

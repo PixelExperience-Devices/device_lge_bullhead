@@ -119,11 +119,11 @@
 /system/bin/imsdatadaemon          u:object_r:ims_exec:s0
 /system/bin/imsqmidaemon           u:object_r:ims_exec:s0
 /system/bin/cnd                    u:object_r:cnd_exec:s0
-/system/bin/init\.bullhead\.power\.sh           u:object_r:init-power-sh_exec:s0
-/system/bin/init\.bullhead\.sh                  u:object_r:bullhead-sh_exec:s0
-/system/bin/init\.bullhead\.qseecomd\.sh        u:object_r:init-bullhead-qseecomd-sh_exec:s0
-/system/bin/init\.qcom\.devstart\.sh            u:object_r:init-qcom-devstart-sh_exec:s0
-/system/bin/init\.qcom\.devwait\.sh             u:object_r:init-qcom-devwait-sh_exec:s0
+/vendor/bin/init\.bullhead\.power\.sh           u:object_r:init-power-sh_exec:s0
+/vendor/bin/init\.bullhead\.sh                  u:object_r:bullhead-sh_exec:s0
+/vendor/bin/init\.bullhead\.qseecomd\.sh        u:object_r:init-bullhead-qseecomd-sh_exec:s0
+/vendor/bin/init\.qcom\.devstart\.sh            u:object_r:init-qcom-devstart-sh_exec:s0
+/vendor/bin/init\.qcom\.devwait\.sh             u:object_r:init-qcom-devwait-sh_exec:s0
 /system/bin/cnss-daemon            u:object_r:wcnss_service_exec:s0
 /system/bin/cnss_diag              u:object_r:cnss_diag_exec:s0
 /system/bin/loc_launcher           u:object_r:location_exec:s0
