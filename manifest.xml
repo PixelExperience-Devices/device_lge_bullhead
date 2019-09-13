@@ -43,6 +43,7 @@
             <name>IComposer</name>
             <instance>default</instance>
         </interface>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.nfc</name>
         <transport>hwbinder</transport>
