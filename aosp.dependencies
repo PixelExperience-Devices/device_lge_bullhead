@@ -1,14 +1,14 @@
 [
   {
-    "repository"  : "francois133/flipflop",
+    "repository"  : "lakgarg/flipflop-1",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "upstream_2",
+    "branch"      : "flipflop",
     "remote"      : "github"
   },
   {
     "repository"  : "lakgarg/proprietary_vendor_lge",
     "target_path" : "vendor/lge",
-    "branch"      : "pie",
+    "branch"      : "10",
     "remote"      : "github"
   },
   {
