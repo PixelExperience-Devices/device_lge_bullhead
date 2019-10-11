@@ -256,11 +256,21 @@ on post-fs-data
     chown input system /persist/calibration/xtalk
     chmod 0640 /persist/calibration/xtalk
 
-    #Create directories for Location services
+     # Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
     mkdir /data/misc/location/xtwifi 0770 gps gps
     mkdir /data/misc/location/gpsone_d 0770 system gps
+    mkdir /data/misc/location/quipc 0770 gps system
+    mkdir /data/misc/location/gsiff 0770 gps gps
+
+    # migrating the GNSS hal to vendor requires this to be relabeled; the
+    # directory itself is created by /vendor/bin/xtra-daemon
+    chown gps gps /data/misc/location/xtra
+    chmod 0750 /data/misc/location/xtra
+    chown gps gps /data/misc/location/xtra/socket_hal_xtra
+    chmod 0660 /data/misc/location/xtra/socket_hal_xtra
+    chown gps gps /data/misc/location/xtra/xtra.sqlite
 
     # Audio
     mkdir /data/misc/audio 0770 audio audio
@@ -277,8 +287,8 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-service irsc_util /system/bin/irsc_util "/etc/sec_config"
-    class main
+service irsc_util /system/bin/irsc_util "/vendor/etc/sec_config"
+    class core
     user root
     oneshot
 

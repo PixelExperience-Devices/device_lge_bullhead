@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:system/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:system/etc/permissions/android.hardware.wifi.passpoint.xml \
@@ -146,7 +146,7 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sec_config:system/etc/sec_config
+    device/lge/bullhead/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # NFC config files
 PRODUCT_COPY_FILES += \
@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/gps.conf:system/etc/gps.conf
+    device/lge/bullhead/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -559,7 +559,7 @@ PRODUCT_PACKAGES += \
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-impl:64 \
     android.hardware.gnss@1.0-service
 
 #USB HAL
