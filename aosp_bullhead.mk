@@ -46,7 +46,10 @@ $(call inherit-product, vendor/lge/bullhead/bullhead-vendor.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="bullhead-user 8.1.0 OPM3.171019.014 4503998 release-keys"
 
-BUILD_FINGERPRINT=google/bullhead/bullhead:8.1.0/OPM3.171019.014/4503998:user/release-keys \
+BUILD_FINGERPRINT=google/bullhead/bullhead:8.1.0/OPM3.171019.014/4503998:user/release-keys 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/bullhead/bullhead:8.1.0/OPM3.171019.014/4503998:user/release-keys
 
 PRODUCT_PACKAGES += \
     Launcher3 \
