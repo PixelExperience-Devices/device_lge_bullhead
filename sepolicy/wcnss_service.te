@@ -1,5 +1,5 @@
-type wcnss_service, domain, device_domain_deprecated;
-type wcnss_service_exec, exec_type, file_type;
+type wcnss_service, domain, coredomain,device_domain_deprecated;
+type wcnss_service_exec, exec_type, file_type, system_file_type;
 
 init_daemon_domain(wcnss_service)
 

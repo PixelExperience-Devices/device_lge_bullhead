@@ -1,6 +1,6 @@
 # Connectivity Engine Observer Interface daemon (cnd)
-type cnd, domain, device_domain_deprecated;
-type cnd_exec, exec_type, file_type;
+type cnd, domain, coredomain, device_domain_deprecated;
+type cnd_exec, exec_type, file_type, system_file_type;
 
 init_daemon_domain(cnd)
 

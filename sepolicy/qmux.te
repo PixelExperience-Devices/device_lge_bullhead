@@ -1,6 +1,6 @@
 # Qualcomm Management Interface Multiplexer
-type qmux, domain, device_domain_deprecated;
-type qmux_exec, exec_type, file_type;
+type qmux, domain, coredomain, device_domain_deprecated;
+type qmux_exec, exec_type, file_type, system_file_type;
 net_domain(qmux)
 
 # Started by init

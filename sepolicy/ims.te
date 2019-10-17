@@ -1,6 +1,6 @@
 # For IP Multimedia Subsystem(IMS) functionality
-type ims, domain, device_domain_deprecated;
-type ims_exec, exec_type, file_type;
+type ims, domain, coredomain, device_domain_deprecated;
+type ims_exec, exec_type, file_type,system_file_type;
 
 # Started by init
 init_daemon_domain(ims)
@@ -20,7 +20,7 @@ allow ims ims_socket:sock_file write;
 # talk to connectivity engine observer interface daemon (cnd)
 unix_socket_connect(ims, cnd, cnd)
 # talk to netd
-# unix_socket_connect(ims, netd, netd)
+unix_socket_connect(ims, netmgrd, netmgrd)
 # talk to qmux
 qmux_socket(ims)
 # communicate with the network driver
@@ -28,7 +28,7 @@ allow ims self:udp_socket { create ioctl };
 allowxperm ims self:udp_socket ioctl SIOCDEVPRIVATE_D;
 
 # Runs /system/bin/sh for executing ndc commands via popen
-allow ims shell_exec:file rx_file_perms;
+allow ims vendor_shell_exec:file rx_file_perms;
 
 # Runs /system/bin/ndc
 allow ims system_file:file rx_file_perms;

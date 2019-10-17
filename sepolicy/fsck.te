@@ -1,1 +1,2 @@
 allow fsck block_device:blk_file ioctl;
+allow fsck fsck:blk_file read;
