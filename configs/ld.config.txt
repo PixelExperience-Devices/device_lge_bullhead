@@ -65,6 +65,7 @@ namespace.sphal.visible = true
 # These are dlopen'ed by libvndksupport.so.
 namespace.sphal.search.paths  = /odm/${LIB}
 namespace.sphal.search.paths += /vendor/${LIB}
+namespace.sphal.search.paths += /vendor/${LIB}/hw
 
 namespace.sphal.permitted.paths  = /odm/${LIB}
 namespace.sphal.permitted.paths += /vendor/${LIB}
