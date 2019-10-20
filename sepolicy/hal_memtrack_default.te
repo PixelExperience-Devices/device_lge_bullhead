@@ -8,3 +8,5 @@ allow hal_memtrack_default debugfs_kgsl_proc:file { open read write getattr seta
 # Grant access if that's the case; don't log denials for other processes.
 allow hal_memtrack_default surfaceflinger:file read;
 dontaudit hal_memtrack_default { domain -surfaceflinger}:file read;
+allow hal_memtrack_default atfwd:dir { search open getattr }; 
+allow hal_memtrack_default hal_fingerprint_default:dir { search open };

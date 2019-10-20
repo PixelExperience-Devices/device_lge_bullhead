@@ -16,3 +16,4 @@ allow hal_gnss_default qmuxd_socket:file rw_file_perms;
 allow hal_gnss_default qmuxd_socket:sock_file create_file_perms;
 allow hal_gnss_default qmuxd_socket:sock_file { create unlink setattr write };
 allow hal_gnss_default sysfs:file r_file_perms;
+allow hal_gnss_default hal_gnss_default:socket read;
