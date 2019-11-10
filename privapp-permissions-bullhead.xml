@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <permissions>
-    <privapp-permissions package="com.android.hotwordenrollment.okgoogle">
-        <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+    <privapp-permissions package="com.lge.lifetimer">
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
     </privapp-permissions>
 
-    <privapp-permissions package="com.android.hotwordenrollment.tgoogle">
-        <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+    <privapp-permissions package="com.qualcomm.atfwd">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
 
-    <privapp-permissions package="com.android.hotwordenrollment.xgoogle">
-        <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+    <privapp-permissions package="com.qualcomm.qcrilmsgtunnel">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.quicinc.cne.CNEService">
+        <permission name="android.permission.PACKET_KEEPALIVE_OFFLOAD"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.verizon.omadm">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
     </privapp-permissions>
 
 </permissions>

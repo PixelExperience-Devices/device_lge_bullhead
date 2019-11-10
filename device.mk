@@ -612,4 +612,4 @@ $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
 
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/privapp-permissions-google.xml:system/etc/permissions/privapp-permissions-bullhead.xml
+    $(LOCAL_PATH)/privapp-permissions-bullhead.xml:system/etc/permissions/privapp-permissions-bullhead.xml
