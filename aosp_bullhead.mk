@@ -23,7 +23,6 @@ PRODUCT_COPY_FILES := device/lge/bullhead/apns-full-conf.xml:system/etc/apns-con
 # Inherit some common PixelExperience stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
-CUSTOM_BUILD_TYPE=OFFICIAL
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from the common Open Source product configuration
