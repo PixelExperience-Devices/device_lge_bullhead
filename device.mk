@@ -633,5 +633,9 @@ persist.sys.usb.config=adb
 ro.secure=0
 ro.adb.secure=0
 
+# Privapp Whitelist
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/privapp-permissions-bullhead.xml:system/etc/permissions/privapp-permissions-bullhead.xml
+
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
