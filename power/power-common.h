@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2013, 2018-2019 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,17 +26,33 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#define NODE_MAX (64)
+#ifndef __POWER_COMMON_H__
+#define __POWER_COMMON_H__
 
-#define SCALING_GOVERNOR_PATH "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
-#define DCVS_CPU0_SLACK_MAX_NODE "/sys/module/msm_dcvs/cores/cpu0/slack_time_max_us"
-#define DCVS_CPU0_SLACK_MIN_NODE "/sys/module/msm_dcvs/cores/cpu0/slack_time_min_us"
-#define MPDECISION_SLACK_MAX_NODE "/sys/module/msm_mpdecision/slack_time_max_us"
-#define MPDECISION_SLACK_MIN_NODE "/sys/module/msm_mpdecision/slack_time_min_us"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define ONDEMAND_GOVERNOR "ondemand"
 #define INTERACTIVE_GOVERNOR "interactive"
-#define MSMDCVS_GOVERNOR "msm-dcvs"
+#define SCHEDUTIL_GOVERNOR "schedutil"
 
 #define HINT_HANDLED (0)
 #define HINT_NONE (-1)
+
+#include <hardware/power.h>
+
+enum CPU_GOV_CHECK { CPU0 = 0, CPU1 = 1, CPU2 = 2, CPU3 = 3 };
+
+void power_init(void);
+void power_hint(power_hint_t hint, void* data);
+void set_interactive(int on);
+
+#define ARRAY_SIZE(x) (sizeof((x)) / sizeof((x)[0]))
+#define CHECK_HANDLE(x) ((x) > 0)
+#define UNUSED(x) UNUSED_##x __attribute__((__unused__))
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  //__POWER_COMMON_H___
