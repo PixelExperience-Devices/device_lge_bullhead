@@ -385,10 +385,9 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     oneshot
 
 service loc_launcher /vendor/bin/loc_launcher
-    #loc_launcher will start as gps
+    #loc_launcher will start as root and set its uid to gps
     class late_start
-    user gps
-    group gps
+    group gps inet net_raw diag net_admin wifi
 
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
