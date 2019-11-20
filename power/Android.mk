@@ -13,7 +13,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhidltransport \
     libhwbinder \
     libutils \
-    android.hardware.power@1.2
+    android.hardware.power@1.2 
 
 LOCAL_HEADER_LIBRARIES := \
     libhardware_headers
