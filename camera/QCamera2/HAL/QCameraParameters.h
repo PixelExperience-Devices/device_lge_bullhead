@@ -42,7 +42,7 @@ static const char ExifAsciiPrefix[] = { 0x41, 0x53, 0x43, 0x49, 0x49, 0x0, 0x0, 
 static const char ExifUndefinedPrefix[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };   // "\0\0\0\0\0\0\0\0"
 
 #define EXIF_ASCII_PREFIX_SIZE           8   //(sizeof(ExifAsciiPrefix))
-#define FOCAL_LENGTH_DECIMAL_PRECISION   100
+#define FOCAL_LENGTH_DECIMAL_PRECISION   1000
 
 #define CAMERA_MIN_BATCH_COUNT           1
 
@@ -57,7 +57,7 @@ public:
 class QCameraParameters;
 class QCameraReprocScaleParam{
 public:
-    QCameraReprocScaleParam(QCameraParameters *parent);
+    QCameraReprocScaleParam();
     virtual ~QCameraReprocScaleParam();
 
     virtual void setScaleEnable(bool enabled);
@@ -84,10 +84,8 @@ private:
     size_t checkScaleSizeTable(size_t scale_cnt, cam_dimension_t *scale_tbl,
             size_t org_cnt, cam_dimension_t *org_tbl);
 
-    QCameraParameters *mParent;
     bool mScaleEnabled;
     bool mIsUnderScaling;   //if in scale status
-    bool mScaleDirection;   // 0: Upscaling; 1: Downscaling
 
     // picture size cnt that need scale operation
     size_t mNeedScaleCnt;

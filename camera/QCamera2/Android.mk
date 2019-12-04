@@ -4,6 +4,9 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
+
+LOCAL_CLANG := true
+
 LOCAL_SRC_FILES := \
         util/QCameraCmdThread.cpp \
         util/QCameraQueue.cpp \
@@ -35,7 +38,7 @@ LOCAL_SRC_FILES += \
         HAL/QCameraParameters.cpp \
         HAL/QCameraThermalAdapter.cpp
 
-LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-error -Wno-tautological-pointer-compare
+LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-label -Wno-unused-parameter
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
 LOCAL_CFLAGS += -DENABLE_MODEL_INFO_EXIF
 
@@ -61,7 +64,7 @@ LOCAL_C_INCLUDES += \
         frameworks/native/include/media/hardware \
         device/lge/bullhead/camera/QCamera2/HAL
 
-LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 #LOCAL_STATIC_LIBRARIES := libqcamera2_util
 LOCAL_C_INCLUDES += \

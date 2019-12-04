@@ -482,7 +482,7 @@ void QCamera3Channel::dumpYUV(mm_camera_buf_def_t *frame, cam_dimension_t dim,
     int file_fd = open(buf, O_RDWR| O_CREAT, 0644);
     if (file_fd >= 0) {
         ssize_t written_len = write(file_fd, frame->buffer, offset.frame_len);
-        ALOGE("%s: written number of bytes %d", __func__, written_len);
+        ALOGE("%s: written number of bytes %zd", __func__, written_len);
         close(file_fd);
     } else {
         ALOGE("%s: failed to open file to dump image", __func__);
@@ -2436,7 +2436,6 @@ int32_t QCamera3YUVChannel::request(buffer_handle_t *buffer,
         metadata_buffer_t* metadata, bool &needMetadata)
 {
     int32_t rc = NO_ERROR;
-    int index;
     Mutex::Autolock lock(mOfflinePpLock);
 
     CDBG("%s: pInputBuffer is %p", __func__, pInputBuffer);
@@ -2992,7 +2991,6 @@ int32_t QCamera3PicChannel::initialize(cam_is_type_t isType)
     cam_dimension_t streamDim;
     cam_stream_type_t streamType;
     cam_format_t streamFormat;
-    mm_camera_channel_attr_t attr;
 
     if (NULL == mCamera3Stream) {
         ALOGE("%s: Camera stream uninitialized", __func__);
@@ -3251,7 +3249,6 @@ void QCamera3PicChannel::streamCbRoutine(mm_camera_super_buf_t *super_frame,
 
 QCamera3StreamMem* QCamera3PicChannel::getStreamBufs(uint32_t len)
 {
-    int rc = 0;
 
     mYuvMemory = new QCamera3StreamMem(mCamera3Stream->max_buffers, false);
     if (!mYuvMemory) {
@@ -3624,7 +3621,6 @@ void QCamera3ReprocessChannel::streamCbRoutine(mm_camera_super_buf_t *super_fram
  *==========================================================================*/
 QCamera3StreamMem* QCamera3ReprocessChannel::getStreamBufs(uint32_t len)
 {
-    int rc = 0;
     if (mReprocessType == REPROCESS_TYPE_JPEG) {
         mMemory = new QCamera3StreamMem(mNumBuffers, false);
         if (!mMemory) {
@@ -3734,7 +3730,7 @@ int32_t QCamera3ReprocessChannel::stop()
 
     rc = QCamera3Channel::stop();
 
-    rc != m_camOps->stop_channel(m_camHandle, m_handle);
+    rc |= m_camOps->stop_channel(m_camHandle, m_handle);
 
     unmapOfflineBuffers(true);
 

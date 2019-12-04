@@ -1718,13 +1718,14 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
         {
             if (isNoDisplayMode()) {
                 mem = new QCameraStreamMemory(mGetMemory,
+                        mCallbackCookie,
                         bCachedMem,
                         (bPoolMem) ? &m_memoryPool : NULL,
                         stream_type);
             } else {
                 cam_dimension_t dim;
                 QCameraGrallocMemory *grallocMemory =
-                    new QCameraGrallocMemory(mGetMemory);
+                    new QCameraGrallocMemory(mGetMemory, mCallbackCookie);
 
                 mParameters.getStreamDimension(stream_type, dim);
                 if (grallocMemory)
@@ -1738,11 +1739,11 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
     case CAM_STREAM_TYPE_POSTVIEW:
         {
             if (isNoDisplayMode() || isPreviewRestartEnabled()) {
-                mem = new QCameraStreamMemory(mGetMemory, bCachedMem);
+                mem = new QCameraStreamMemory(mGetMemory, mCallbackCookie, bCachedMem);
             } else {
                 cam_dimension_t dim;
                 QCameraGrallocMemory *grallocMemory =
-                        new QCameraGrallocMemory(mGetMemory);
+                        new QCameraGrallocMemory(mGetMemory, mCallbackCookie);
 
                 mParameters.getStreamDimension(stream_type, dim);
                 if (grallocMemory)
@@ -1759,6 +1760,7 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
     case CAM_STREAM_TYPE_METADATA:
     case CAM_STREAM_TYPE_OFFLINE_PROC:
         mem = new QCameraStreamMemory(mGetMemory,
+                mCallbackCookie,
                 bCachedMem,
                 (bPoolMem) ? &m_memoryPool : NULL,
                 stream_type);
@@ -1770,7 +1772,7 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamBuf(
                 bCachedMem = QCAMERA_ION_USE_NOCACHE;
             }
             CDBG_HIGH("%s: vidoe buf using cached memory = %d", __func__, bCachedMem);
-            mem = new QCameraVideoMemory(mGetMemory, bCachedMem);
+            mem = new QCameraVideoMemory(mGetMemory, mCallbackCookie, bCachedMem);
         }
         break;
     case CAM_STREAM_TYPE_DEFAULT:
@@ -1980,6 +1982,7 @@ QCameraHeapMemory *QCamera2HardwareInterface::allocateStreamInfoBuf(
                     streamInfo->user_buf_info.frame_buf_cnt,
                     streamInfo->user_buf_info.frameInterval);
         }
+        break;
     case CAM_STREAM_TYPE_PREVIEW:
         if (mParameters.getRecordingHintValue()) {
             const char* dis_param = mParameters.get(QCameraParameters::KEY_QC_DIS);
@@ -2059,7 +2062,6 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamUserBuf(
 {
     int rc = NO_ERROR;
     QCameraMemory *mem = NULL;
-    int bufferCnt = 0;
     int size = 0;
 
     if (streamInfo->streaming_mode != CAM_STREAMING_MODE_BATCH) {
@@ -2071,7 +2073,7 @@ QCameraMemory *QCamera2HardwareInterface::allocateStreamUserBuf(
     switch (streamInfo->stream_type) {
     case CAM_STREAM_TYPE_VIDEO: {
         QCameraVideoMemory *video_mem = new QCameraVideoMemory(
-                mGetMemory, FALSE, CAM_STREAM_BUF_TYPE_USERPTR);
+                mGetMemory, mCallbackCookie, FALSE, CAM_STREAM_BUF_TYPE_USERPTR);
         video_mem->allocateMeta(streamInfo->num_bufs);
         mem = static_cast<QCameraMemory *>(video_mem);
     }
@@ -4304,6 +4306,7 @@ void QCamera2HardwareInterface::camEvtHandle(uint32_t /*camera_handle*/,
                         obj->mDeffCond.broadcast();
                         CDBG_HIGH("%s: broadcast mDeffCond signal\n", __func__);
                     }
+                    break;
                 default:
                     obj->processEvt(QCAMERA_SM_EVT_EVT_NOTIFY, payload);
                     break;

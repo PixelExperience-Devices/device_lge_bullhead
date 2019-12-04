@@ -4,12 +4,14 @@ LOCAL_PATH := $(call my-dir)
 include $(LOCAL_PATH)/../../../common.mk
 include $(CLEAR_VARS)
 
+
+LOCAL_CLANG := true
 LOCAL_CXX_STL := none
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 LOCAL_CFLAGS+= -D_ANDROID_
 
-LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter -Wno-error -Wno-sign-conversion -Wno-unused-value -Wno-pointer-bool-conversion
+LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 
 LOCAL_C_INCLUDES+= $(kernel_includes)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
@@ -59,6 +61,7 @@ LOCAL_MODULE           := libmmjpeg_interface
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core liblog
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
