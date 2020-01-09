@@ -26,14 +26,14 @@
     <ctl name="LINEOUT4 Volume" value="13" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="84" />
-    <ctl name="RX4 Digital Volume" value="84" />
-    <ctl name="RX5 Digital Volume" value="84" />
-    <ctl name="RX6 Digital Volume" value="84" />
-    <ctl name="RX7 Digital Volume" value="84" />
-    <ctl name="RX8 Digital Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="89" />
+    <ctl name="RX2 Digital Volume" value="89" />
+    <ctl name="RX3 Digital Volume" value="89" />
+    <ctl name="RX4 Digital Volume" value="89" />
+    <ctl name="RX5 Digital Volume" value="89" />
+    <ctl name="RX6 Digital Volume" value="89" />
+    <ctl name="RX7 Digital Volume" value="89" />
+    <ctl name="RX8 Digital Volume" value="89" />
     <ctl name="ADC1 Volume" value="19" />
     <ctl name="ADC2 Volume" value="19" />
     <ctl name="ADC3 Volume" value="0" />
@@ -1595,7 +1595,7 @@
     </path>
 
     <path name="speaker-gain-default">
-        <ctl name="RX7 Digital Volume" value="84" />
+        <ctl name="RX7 Digital Volume" value="89" />
         <ctl name="SPK DRV Volume" value="8" />
     </path>
 
@@ -1689,7 +1689,7 @@
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX1 Digital Volume" value="89" />
     </path>
 
     <path name="handset-mic">
@@ -1762,13 +1762,13 @@
 
     <path name="voice-hac-handset">
         <path name="handset" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="89" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
     </path>
 
     <path name="voice-handset">
         <path name="handset" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="89" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
     </path>
 
@@ -1778,14 +1778,14 @@
 
     <path name="voice-handset-vzwusc">
         <path name="handset" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="89" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
     </path>
 
     <path name="voice-speaker">
         <path name="speaker" />
         <ctl name="COMP0 Switch" value="0" />
-        <ctl name="RX7 Digital Volume" value="84" />
+        <ctl name="RX7 Digital Volume" value="89" />
         <ctl name="SPK DRV Volume" value="8" />
     </path>
 
