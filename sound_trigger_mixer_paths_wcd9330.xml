@@ -75,12 +75,6 @@
         <ctl name="LSM8 MUX" value="SLIMBUS_5_TX" />
     </path>
 
-   <path name="listen-cpe-handset-mic low-speed-intf">
-        <ctl name="MADONOFF Switch" value="1" />
-        <ctl name="MAD Input" value="DMIC1" />
-	<ctl name="CPE AFE MAD Enable" value="1"/>
-    </path>
-
     <path name="listen-cpe-handset-mic">
         <ctl name="MADONOFF Switch" value="1" />
         <ctl name="MAD Input" value="DMIC1" />
