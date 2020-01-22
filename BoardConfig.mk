@@ -56,6 +56,8 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive androidbo
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_DSM_FEEDBACK := true
+# Needed for VoLTE
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 
@@ -165,6 +167,10 @@ TARGET_OMIT_NETD_TETHER_FTP_HELPER := true
 # Once camera module can run in the native mode of the system (either
 # 32-bit or 64-bit), the following line should be deleted
 BOARD_QTI_CAMERA_32BIT_ONLY := true
+
+# Use QTI camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+USE_DEVICE_SPECIFIC_CAMERA := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
