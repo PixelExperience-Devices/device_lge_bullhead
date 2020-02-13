@@ -1,8 +1,8 @@
 [
   {
-    "repository"  : "lakgarg/flipflop-1",
+    "repository"  : "mortezadadgar/bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "flipflop",
+    "branch"      : "master",
     "remote"      : "github"
   },
   {
@@ -18,8 +18,8 @@
     "remote"      : "github"
   },
   {
-    "repository"  : "francois133/gcc_10_toolchain",
-    "target_path" : "prebuilts/gcc_toolchain_10",
+    "repository"  : "lakgarg/toolchain",
+    "target_path" : "prebuilts/toolchain",
     "branch"      : "master",
     "remote"      : "gitlab"
   }
