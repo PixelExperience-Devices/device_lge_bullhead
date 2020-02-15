@@ -35,8 +35,8 @@ WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Inline kernel building
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/toolchain/bin
-KERNEL_TOOLCHAIN_PREFIX := aarch64-none-elf-
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc_toolchain_10/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE := kernel/lge/bullhead
 TARGET_KERNEL_CONFIG := shadow_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb

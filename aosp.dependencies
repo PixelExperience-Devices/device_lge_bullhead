@@ -1,6 +1,6 @@
 [
   {
-    "repository"  : "mortezadadgar/bullhead",
+    "repository"  : "lakgarg/bullhead",
     "target_path" : "kernel/lge/bullhead",
     "branch"      : "master",
     "remote"      : "github"
@@ -18,8 +18,8 @@
     "remote"      : "github"
   },
   {
-    "repository"  : "lakgarg/toolchain",
-    "target_path" : "prebuilts/toolchain",
+    "repository"  : "francois133/gcc_10_toolchain",
+    "target_path" : "prebuilts/gcc_toolchain_10",
     "branch"      : "master",
     "remote"      : "gitlab"
   }
