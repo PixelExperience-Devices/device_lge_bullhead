@@ -1,4 +1,4 @@
-type perfd, domain, coredomain, device_domain_deprecated;
+type perfd, domain,coredomain;
 type perfd_exec, exec_type, file_type, system_file_type;
 
 init_daemon_domain(perfd)

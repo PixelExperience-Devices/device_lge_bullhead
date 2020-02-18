@@ -1,4 +1,4 @@
-type atfwd,domain,coredomain,device_domain_deprecated;
+type atfwd,domain,coredomain;
 type atfwd_exec, exec_type, file_type, system_file_type;
 
 # Started by init

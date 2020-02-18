@@ -1,5 +1,5 @@
 # nfc subsystem
-type nfc_hal_pn54x, domain, coredomain;
+type nfc_hal_pn54x, domain,coredomain;
 type nfc_hal_pn54x_exec, exec_type, file_type,system_file_type;
 
 # may be started by init

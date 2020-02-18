@@ -230,9 +230,17 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
 
     # Create the directories used by the Wireless subsystem
-    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/vendor/wifi 0771 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    # Create folder for WifiHal socket
+    mkdir /dev/socket/wifihal 0770 wifi wifi
+    chmod 2770 /dev/socket/wifihal
 
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
@@ -264,8 +272,6 @@ on post-fs-data
 
     # Audio
     mkdir /data/misc/audio 0770 audio audio
-
-    setprop vold.decrypt trigger_restart_framework
 
     # perf daemon
     mkdir /data/misc/perfd 0755 root system

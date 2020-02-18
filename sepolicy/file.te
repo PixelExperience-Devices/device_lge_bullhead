@@ -120,6 +120,7 @@ type debugfs_kgsl_proc, fs_type, debugfs_type;
 type sysfs_rmnet, fs_type, sysfs_type;
 
 type netmgrd_socket, file_type;
+type wifihal_socket, file_type;
 
 # type for init
 type sysfs_block, fs_type, sysfs_type;

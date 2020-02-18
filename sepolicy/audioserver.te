@@ -1,1 +1,3 @@
 allow audioserver kernel:system { module_request };
+allow audioserver hal_power_default:binder call;
+dontaudit audioserver hal_power_hwservice:hwservice_manager find;

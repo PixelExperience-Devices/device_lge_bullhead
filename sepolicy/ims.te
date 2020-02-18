@@ -1,5 +1,5 @@
 # For IP Multimedia Subsystem(IMS) functionality
-type ims, domain, coredomain, device_domain_deprecated;
+type ims, domain,coredomain;
 type ims_exec, exec_type, file_type,system_file_type;
 
 # Started by init

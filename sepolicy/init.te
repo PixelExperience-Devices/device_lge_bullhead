@@ -36,3 +36,6 @@ allow init sysfs_mmcblk0_queue:file rw_file_perms;
 # kgsl
 allow init debugfs_kgsl_proc:dir { search read open relabelfrom };
 allow init debugfs_kgsl_proc:file { read write getattr setattr };
+
+# Allow init to bind mount loader config for media swcodec
+allow init system_file:file mounton;
