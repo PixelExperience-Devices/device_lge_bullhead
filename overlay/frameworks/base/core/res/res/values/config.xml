@@ -421,9 +421,4 @@
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
-    <!-- AOD -->
-    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
-    <bool name="config_displayBlanksAfterDoze">false</bool>
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-
 </resources>
