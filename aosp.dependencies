@@ -18,9 +18,9 @@
     "remote"      : "github"
   },
   {
-    "repository"  : "francois133/gcc_10_toolchain",
-    "target_path" : "prebuilts/gcc_toolchain_10",
+    "repository"  : "arter97/arm64-gcc",
+    "target_path" : "prebuilts/arm64-gcc",
     "branch"      : "master",
-    "remote"      : "gitlab"
+    "remote"      : "github"
   }
 ]
