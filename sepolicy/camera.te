@@ -47,7 +47,5 @@ allow camera kernel:system { module_request };
 
 allow camera debugfs_kgsl:dir { search read open };
 allow camera debugfs_kgsl:file { read write getattr setattr };
-allow camera debugfs_kgsl_proc:dir { search read open };
-allow camera debugfs_kgsl_proc:file { read write getattr setattr };
 
 allow camera hal_camera_default:fd { use };

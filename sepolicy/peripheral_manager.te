@@ -1,8 +1,7 @@
 #Policy for peripheral_manager
 #per_mgr - peripheral_manager domain
-type per_mgr, domain,coredomain;
-
-type per_mgr_exec, exec_type, file_type, system_file_type;
+type per_mgr, domain;
+type per_mgr_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(per_mgr);
 
 #Needed for binder transactions
@@ -28,8 +27,8 @@ allow per_mgr ssr_device:chr_file { open read };
 #allow per_mgr sysfs_esoc:lnk_file { read };
 
 #Needed by libmdmdetect to get subsystem info and to check their states
-allow per_mgr sysfs_ssr:dir { open search read };
-allow per_mgr sysfs_ssr:lnk_file { read open };
+allow per_mgr sysfs_msm_subsys:dir { open search read };
+allow per_mgr sysfs_msm_subsys:lnk_file { read open };
 
 #Needed by pm-proxy to talk to peripheral manager
 binder_call(per_mgr, per_mgr);

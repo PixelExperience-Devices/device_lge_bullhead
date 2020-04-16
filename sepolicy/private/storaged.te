@@ -1,3 +1,2 @@
-#type sysfs_mmcblk0, fs_type, sysfs_type;
 allow storaged sysfs:dir { search read open };
 allow storaged sysfs:file { read open setattr getattr };

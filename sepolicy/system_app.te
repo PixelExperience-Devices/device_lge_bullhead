@@ -1,5 +1,4 @@
 allow system_app time_daemon:unix_stream_socket connectto;
-allow system_app atfwd_service:service_manager add;
 unix_socket_connect(system_app, cnd, cnd)
 
 allow system_app cne_service:service_manager add;
@@ -11,8 +10,9 @@ allow system_app cnd_data_file:file create_file_perms;
 
 allow system_app debugfs_kgsl:dir { search read open };
 allow system_app debugfs_kgsl:file { read write getattr setattr };
-allow system_app debugfs_kgsl_proc:dir { search read open };
-allow system_app debugfs_kgsl_proc:file { read write getattr setattr };
 
 allow system_app proc_pagetypeinfo:file open;
-allow system_app sysfs_block:dir search;
+allow system_app sysfs_devices_block:dir r_dir_perms;
+allow system_app sysfs_devices_block:file r_file_perms;
+
+allow system_app atfwd_service:service_manager add;

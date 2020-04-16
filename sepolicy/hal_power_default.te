@@ -1,0 +1,2 @@
+allow hal_power_default debugfs_rpm:file { open read getattr };
+
