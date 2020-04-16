@@ -1,9 +1,9 @@
 allowxperm hal_gnss_default self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm hal_gnss_default self:udp_socket ioctl priv_sock_ioctls;
 
-allow hal_gnss_default sysfs_ssr:dir { search read open };
-allow hal_gnss_default sysfs_ssr:file rw_file_perms;
-allow hal_gnss_default sysfs_ssr:lnk_file { read open };
+allow hal_gnss_default sysfs_msm_subsys:dir { search read open };
+allow hal_gnss_default sysfs_msm_subsys:file rw_file_perms;
+allow hal_gnss_default sysfs_msm_subsys:lnk_file { read open };
 allow hal_gnss_default location_data_file:dir { search read open write add_name };
 allow hal_gnss_default location_data_file:file { read write getattr setattr open };
 allow hal_gnss_default location_data_file:fifo_file create_file_perms;

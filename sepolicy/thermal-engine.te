@@ -1,6 +1,6 @@
 # Temperature sensor daemon (root process)
-type thermal-engine,domain,coredomain;
-type thermal-engine_exec, exec_type, file_type,system_file_type;
+type thermal-engine, domain;
+type thermal-engine_exec, exec_type, file_type, vendor_file_type;
 
 # Started by init
 init_daemon_domain(thermal-engine)
@@ -32,5 +32,5 @@ allow thermal-engine sysfs_backlight:file rw_file_perms;
 allow thermal-engine sysfs_battery:dir search;
 allow thermal-engine sysfs_battery:file rw_file_perms;
 
-r_dir_file(thermal-engine, sysfs_ssr)
+r_dir_file(thermal-engine, sysfs_msm_subsys)
 r_dir_file(thermal-engine, sysfs_leds)

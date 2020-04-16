@@ -1,5 +1,5 @@
-type atfwd,domain,coredomain;
-type atfwd_exec, exec_type, file_type, system_file_type;
+type atfwd, domain;
+type atfwd_exec, exec_type, file_type, vendor_file_type;
 
 # Started by init
 init_daemon_domain(atfwd)
@@ -18,3 +18,6 @@ allow atfwd atfwd_service:service_manager find;
 allow atfwd diag_device:chr_file rw_file_perms;
 
 set_prop(atfwd, radio_atfwd_prop)
+
+allow atfwd sysfs_msm_subsys:dir r_dir_perms;
+allow atfwd sysfs_msm_subsys:lnk_file r_file_perms;

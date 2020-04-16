@@ -8,6 +8,8 @@ init_daemon_domain(qti)
 # Talk to qmuxd (qmux_radio)
 qmux_socket(qti)
 
+net_domain(qti)
+
 # Allow qti to create and use socket to communicate between qti processes.
 allow qti self:socket create_socket_perms;
 allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
@@ -15,6 +17,14 @@ allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 # Allow qti to read and write rmnet_device
 allow qti rmnet_device:chr_file rw_file_perms;
 
-allow qti sysfs_ssr:dir { search read open };
-allow qti sysfs_ssr:file rw_file_perms;
-allow qti sysfs_ssr:lnk_file { read open };
+userdebug_or_eng(`
+  allow qti diag_device:chr_file rw_file_perms;
+')
+
+allow qti sysfs_msm_subsys:file rw_file_perms;
+allow qti sysfs_msm_subsys:dir r_dir_perms;
+allow qti sysfs_msm_subsys:lnk_file r_file_perms;
+
+r_dir_file(qti, sysfs_msm_subsys)
+
+#dontaudit qti kernel:system module_request;

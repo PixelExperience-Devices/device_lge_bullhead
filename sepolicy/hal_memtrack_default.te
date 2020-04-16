@@ -1,12 +1,16 @@
-allow hal_memtrack_default debugfs_kgsl:dir search;
-allow hal_memtrack_default debugfs_kgsl:file { open read getattr };
-allow hal_memtrack_default debugfs_kgsl_proc:dir { search read open };
-allow hal_memtrack_default debugfs_kgsl_proc:file { open read write getattr setattr };
-#allow hal_memtrack_default debugfs_mem:dir { search read open };
-#allow hal_memtrack_default debugfs_mem:file { read write getattr setattr };
+r_dir_file(hal_memtrack_default, debugfs_kgsl);
+allow hal_memtrack_default debugfs_kgsl:file { open read write getattr setattr };
+
 # Memtrack reads proc/<pid>/cmdline to check if process is surfaceflinger.
 # Grant access if that's the case; don't log denials for other processes.
 allow hal_memtrack_default surfaceflinger:file read;
 dontaudit hal_memtrack_default { domain -surfaceflinger}:file read;
-allow hal_memtrack_default atfwd:dir { search open getattr }; 
+allow hal_memtrack_default atfwd:dir { search open getattr };
 allow hal_memtrack_default hal_fingerprint_default:dir { search open };
+
+allow hal_memtrack_default hal_configstore_default:file read;
+allow hal_memtrack_default hwservicemanager:file read;
+allow hal_memtrack_default idmap:file read;
+allow hal_memtrack_default servicemanager:file read;
+allow hal_memtrack_default system_app:file read;
+allow hal_memtrack_default vndservicemanager:file read;

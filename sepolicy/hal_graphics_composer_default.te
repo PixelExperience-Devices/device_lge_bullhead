@@ -5,8 +5,6 @@ allow hal_graphics_composer_default sysfs_graphics:file rw_file_perms;
 allow hal_graphics_composer_default sysfs_graphics:lnk_file { read write };
 allow hal_graphics_composer_default debugfs_kgsl:dir { search read open };
 allow hal_graphics_composer_default debugfs_kgsl:file { read write getattr setattr };
-allow hal_graphics_composer_default debugfs_kgsl_proc:dir { search read open };
-allow hal_graphics_composer_default debugfs_kgsl_proc:file { read write getattr setattr };
 allow hal_graphics_composer_default surfaceflinger_service:service_manager { add find };
 
 # vndbinder
@@ -14,3 +12,5 @@ allow hal_graphics_composer_default vndbinder_device:chr_file rw_file_perms;
 # vndservicemanager
 allow hal_graphics_composer_default vndservicemanager:binder { call transfer };
 vndbinder_use(hal_graphics_composer_default);
+
+add_service(hal_graphics_composer_default, qdisplay_service)

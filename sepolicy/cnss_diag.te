@@ -1,7 +1,7 @@
-type cnss_diag_exec, exec_type, file_type, system_file_type;
+type cnss_diag_exec, exec_type, file_type, vendor_file_type;
 
 userdebug_or_eng(`
-  type cnss_diag, domain,coredomain;
+  type cnss_diag, domain;
 
   init_daemon_domain(cnss_diag)
 

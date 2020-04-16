@@ -10,8 +10,8 @@ allow system_server per_mgr_service:service_manager find;
 allow system_server fingerprint_device:chr_file rw_file_perms;
 
 #Needed by libmdmdetect to get subsystem info and to check their states
-allow system_server sysfs_ssr:dir r_dir_perms;
-allow system_server sysfs_ssr:lnk_file r_file_perms;
+allow system_server sysfs_msm_subsys:dir r_dir_perms;
+allow system_server sysfs_msm_subsys:lnk_file r_file_perms;
 
 # Needed by hubconnection for sensor hub
 allow system_server sensors_device:chr_file rw_file_perms;
@@ -42,9 +42,7 @@ allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 allow system_server debugfs_rpm:file { read open getattr };
 
 allow system_server debugfs_kgsl:dir { search read open };
-allow system_server debugfs_kgsl:file { read write getattr setattr };
-allow system_server debugfs_kgsl_proc:dir { search read open };
-allow system_server debugfs_kgsl_proc:file { read write getattr setattr open };
+allow system_server debugfs_kgsl:file { read write getattr setattr open };
 allow system_server unlabeled:file { getattr setattr unlink };
 allow system_server vendor_data_file:dir { search read open };
 allow system_server vendor_data_file:file rw_file_perms;
@@ -53,7 +51,7 @@ allow system_server vendor_data_file:dir write;
 allow system_server crash_dump:process getpgid;
 
 allow system_server sysfs_backlight:file write;
+allow system_server sysfs_display:file write;
 allow system_server sysfs_qpnp_25:file write;
 
-
-
+binder_call(system_server, hal_camera_default)

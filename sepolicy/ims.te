@@ -1,6 +1,6 @@
 # For IP Multimedia Subsystem(IMS) functionality
-type ims, domain,coredomain;
-type ims_exec, exec_type, file_type,system_file_type;
+type ims, domain;
+type ims_exec, exec_type, file_type, vendor_file_type;
 
 # Started by init
 init_daemon_domain(ims)
@@ -38,6 +38,6 @@ allow ims vendor_file_type:file rx_file_perms;
 allow ims self:netlink_socket create_socket_perms_no_ioctl;
 allow ims self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_write nlmsg_read };
 
-allow ims sysfs_ssr:dir { search read open };
-allow ims sysfs_ssr:file rw_file_perms;
-allow ims sysfs_ssr:lnk_file { read open };
+allow ims sysfs_msm_subsys:dir { search read open };
+allow ims sysfs_msm_subsys:file rw_file_perms;
+allow ims sysfs_msm_subsys:lnk_file { read open };

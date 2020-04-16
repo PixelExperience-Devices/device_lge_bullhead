@@ -1,5 +1,5 @@
-type irsc_util, domain,coredomain;
-type irsc_util_exec, exec_type, file_type, system_file_type;
+type irsc_util, domain;
+type irsc_util_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(irsc_util)
 
 userdebug_or_eng(`

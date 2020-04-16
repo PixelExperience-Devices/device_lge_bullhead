@@ -1,6 +1,6 @@
 # Qualcomm Management Interface Multiplexer
-type qmux, domain,coredomain;
-type qmux_exec, exec_type, file_type, system_file_type;
+type qmux, domain;
+type qmux_exec, exec_type, file_type, vendor_file_type;
 net_domain(qmux)
 
 # Started by init
@@ -11,7 +11,7 @@ allow qmux qmuxd_socket:dir w_dir_perms;
 allow qmux qmuxd_socket:sock_file { create setattr getattr unlink };
 
 # /dev/hsicctl* node access
-#allow qmux radio_device:chr_file rw_file_perms;
+allow qmux radio_device:chr_file rw_file_perms;
 
 # /dev/smdcntl0 node access
 allow qmux smd_device:chr_file rw_file_perms;
@@ -22,6 +22,6 @@ wakelock_use(qmux)
 # Access to /sys/devices/virtual/smdpkt/smdcntl*/open_timeout
 allow qmux sysfs_smdcntl_open_timeout:file rw_file_perms;
 
-allow qmux sysfs_ssr:dir { search read open };
-allow qmux sysfs_ssr:file rw_file_perms;
-allow qmux sysfs_ssr:lnk_file { read open };
+allow qmux sysfs_msm_subsys:dir { search read open };
+allow qmux sysfs_msm_subsys:file rw_file_perms;
+allow qmux sysfs_msm_subsys:lnk_file { read open };

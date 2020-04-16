@@ -1,5 +1,5 @@
-type perfd, domain,coredomain;
-type perfd_exec, exec_type, file_type, system_file_type;
+type perfd, domain;
+type perfd_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(perfd)
 
