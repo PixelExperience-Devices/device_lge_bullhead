@@ -9,6 +9,10 @@ allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
 # Talk to qmuxd (qmux_radio)
 qmux_socket(netmgrd)
 
+hwbinder_use(netmgrd)
+allow netmgrd dnsresolver_service:service_manager find;
+allow netmgrd netd_service:service_manager find;
+
 # Runs commands via sh.
 allow netmgrd shell_exec:file rx_file_perms;
 

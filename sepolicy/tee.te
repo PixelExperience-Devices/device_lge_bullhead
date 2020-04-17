@@ -3,6 +3,7 @@ allow tee self:capability { setuid setgid sys_rawio };
 
 allow tee block_device:dir r_dir_perms;
 allow tee drm_block_device:blk_file rw_file_perms;
+allowxperm tee drm_block_device:blk_file ioctl { MMC_IOC_CMD };
 allow tee ssd_block_device:blk_file rw_file_perms;
 
 # Need to figure out how many scsi generic devices are preset
@@ -43,6 +44,7 @@ allow tee time_daemon:unix_stream_socket connectto;
 
 # allow tee to access data partition
 allow tee system_data_file:dir r_dir_perms;
+allow tee vendor_file:dir r_dir_perms;
 
 # fingerprint (HAL)
 allow tee fingerprintd_data_file:dir rw_dir_perms;
