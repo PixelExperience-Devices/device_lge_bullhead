@@ -1,4 +1,4 @@
-allow mediacodec kernel:system { module_request };
+allow mediacodec kernel:system module_request;
 
 # Allow mediacodec access to EGL device
 # Fixes various issues with video processing

@@ -1,0 +1,1 @@
+allow installd device:file rw_file_perms;

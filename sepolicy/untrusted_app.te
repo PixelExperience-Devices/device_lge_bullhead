@@ -5,3 +5,4 @@ allow untrusted_app_25 debugfs_kgsl:dir { search read open };
 allow untrusted_app_25 debugfs_kgsl:file { write getattr setattr };
 allow untrusted_app_27 debugfs_kgsl:dir { search read open };
 allow untrusted_app_27 debugfs_kgsl:file { write getattr setattr };
+allow untrusted_app_27 proc_stat:file getattr;

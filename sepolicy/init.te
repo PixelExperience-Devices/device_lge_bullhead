@@ -22,12 +22,13 @@ allow init sysfs_rfkill0:file { read open write getattr setattr };
 allow init sysfs_rfkill0:lnk_file rw_file_perms;
 
 allow init sysfs:file { setattr getattr };
-#allow init sysfs:file write;
 
 # allow: write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
 allow init sysfs_msm_subsys:dir { search read open };
 allow init sysfs_msm_subsys:file { read open write getattr setattr };
 allow init sysfs_msm_subsys:lnk_file read;
+
+allow init sysfs_msm_subsys_restart:file { read open write getattr setattr };
 
 allow init sysfs_mmc:dir { search read open };
 allow init sysfs_mmc:file rw_file_perms;
@@ -40,3 +41,8 @@ allow init sysfs_kgsl:file { read write getattr setattr };
 
 # Allow init to bind mount loader config for media swcodec
 allow init system_file:file mounton;
+
+allow init persist_file:dir mounton;
+allow init firmware_file:dir mounton;
+
+allow init sysfs_leds:file rw_file_perms;

@@ -8,4 +8,6 @@ get_prop(init-bullhead-qseecomd-sh, qseecomtee_prop)
 allow init-bullhead-qseecomd-sh vendor_shell_exec:file rx_file_perms;
 
 # execute toybox/toolbox
-allow init-bullhead-qseecomd-sh vendor_shell_exec:file rx_file_perms;
+allow init-bullhead-qseecomd-sh vendor_toolbox_exec:file rx_file_perms;
+
+allow init-bullhead-qseecomd-sh vendor_file:dir r_dir_perms;

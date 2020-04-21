@@ -168,11 +168,10 @@
 /sys/kernel/range/enable_ps_sensor                                  u:object_r:sysfs_camera:s0
 /sys/devices/soc\.0/fd900000\.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight/max_brightness u:object_r:sysfs_thermal:s0
 /sys/devices/soc\.0/qpnp-smbcharger-[^/]*/power_supply/battery/system_temp_level                           u:object_r:sysfs_thermal:s0
-
 /sys/devices/virtual/nanohub/nanohub(/.*)? u:object_r:sysfs_nanoapp_cmd:s0
 /sys/kernel/boot_adsp/boot         u:object_r:sysfs_audio:s0
 /sys/devices/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0(/.*)? u:object_r:sysfs_wlan0:s0
-/sys/kernel/debug/kgsl(/.*)?		u:object_r:debugfs_kgsl:s0
+/sys/kernel/debug/kgsl(/.*)?           u:object_r:debugfs_kgsl:s0
 /sys/devices/soc.0/qpnp-smbcharger-17/power_supply/battery(/.*)? u:object_r:sysfs_battery:s0
 /sys/devices/soc.0/fd900000.qcom,mdss_mdp/qcom,mdss_fb_primary.182/leds/lcd-backlight(/.*)? u:object_r:sysfs_backlight:s0
 /sys/module/g_android/parameters(/.*)? u:object_r:sysfs_g_android_param:s0

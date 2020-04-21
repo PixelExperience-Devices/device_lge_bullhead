@@ -14,3 +14,5 @@ allow hal_graphics_composer_default vndservicemanager:binder { call transfer };
 vndbinder_use(hal_graphics_composer_default);
 
 add_service(hal_graphics_composer_default, qdisplay_service)
+
+allow hal_graphics_composer_default ashmemd:binder call;
