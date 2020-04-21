@@ -27,4 +27,7 @@ allow qti sysfs_msm_subsys:lnk_file r_file_perms;
 
 r_dir_file(qti, sysfs_msm_subsys)
 
+allow qti vendor_file:dir r_dir_perms;
+allow qti sysfs:file rw_file_perms;
+
 #dontaudit qti kernel:system module_request;

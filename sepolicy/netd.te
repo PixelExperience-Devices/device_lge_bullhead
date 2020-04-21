@@ -2,3 +2,4 @@ allow netd sysfs_rmnet:dir { search open read };
 allow netd sysfs_rmnet:file rw_file_perms;
 
 dontaudit netd self:capability sys_module;
+allow netd device:file { open write };

@@ -8,3 +8,7 @@ allow priv_app debugfs_kgsl:file { read write getattr setattr };
 allow priv_app sysfs_devices_block:dir { search open };
 allow priv_app sysfs_devices_block:file { read write open getattr setattr };
 allow priv_app sysfs:file { open read getattr };
+allow priv_app sysfs:dir open;
+allow priv_app proc:file open;
+allow priv_app proc_interrupts:file open;
+allow priv_app device:dir open;
