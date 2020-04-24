@@ -2,19 +2,20 @@ allow init tmpfs:lnk_file create_file_perms;
 allow init kernel:system { module_request };
 allow init sysfs_g_android_param:dir search;
 allow init sysfs_g_android_param:file rw_file_perms;
-allow init sysfs_backlight:dir search;
-allow init sysfs_backlight:file { open read write getattr setattr };
 allow init sysfs_lge_handle_panic_param:dir search;
 allow init sysfs_lge_handle_panic_param:file rw_file_perms;
 allow init sysfs_usb:file { open read write getattr setattr };
 allow init sysfs_devices_block:dir { search open };
 allow init sysfs_devices_block:file { read write open getattr setattr };
 allow init sysfs_devices_fingerprint:file { read open write getattr setattr };
-allow init sysfs_display:file { read open write getattr setattr open };
 allow init sysfs_wlan_fwpath:file { read open write getattr setattr open };
 allow init sysfs_power_management:file { read open write getattr setattr open };
-allow init sysfs_qpnp_25:file { read open write getattr setattr open };
-allow init sysfs_qpnp_25:lnk_file r_file_perms;
+allow init sysfs_leds:file { read open write getattr setattr open };
+allow init sysfs_leds:lnk_file r_file_perms;
+allow init sysfs_leds:dir search;
+allow init sysfs_graphics:file { read open write getattr setattr open };
+allow init sysfs_graphics:lnk_file r_file_perms;
+allow init sysfs_graphics:dir search;
 
 # bluetooth permissions grant
 allow init sysfs_rfkill0:dir { search read open };
@@ -45,4 +46,6 @@ allow init system_file:file mounton;
 allow init persist_file:dir mounton;
 allow init firmware_file:dir mounton;
 
-allow init sysfs_leds:file rw_file_perms;
+allow init sysfs_rndis:file rw_file_perms;
+
+allow init sysfs_poweroff:file rw_file_perms;

@@ -7,12 +7,41 @@ allow hal_graphics_composer_default debugfs_kgsl:dir { search read open };
 allow hal_graphics_composer_default debugfs_kgsl:file { read write getattr setattr };
 allow hal_graphics_composer_default surfaceflinger_service:service_manager { add find };
 
-# vndbinder
 allow hal_graphics_composer_default vndbinder_device:chr_file rw_file_perms;
-# vndservicemanager
 allow hal_graphics_composer_default vndservicemanager:binder { call transfer };
 vndbinder_use(hal_graphics_composer_default);
+allow hal_graphics_composer_default qdisplay_service:service_manager { add find };
 
 add_service(hal_graphics_composer_default, qdisplay_service)
 
 allow hal_graphics_composer_default ashmemd:binder call;
+
+allow hal_graphics_composer_default sysfs_camera:dir search;
+allow hal_graphics_composer_default sysfs_camera:file r_file_perms;
+allow hal_graphics_composer_default sysfs_msm_subsys:dir search;
+allow hal_graphics_composer_default sysfs_msm_subsys:file r_file_perms;
+allow hal_graphics_composer_default persist_file:dir search;
+
+userdebug_or_eng(`
+  allow hal_graphics_composer_default diag_device:chr_file rw_file_perms;
+')
+
+allow hal_graphics_composer_default vendor_file:dir search;
+allow hal_graphics_composer_default vendor_file:file r_file_perms;
+
+allow hal_graphics_composer_default hal_graphics_mapper_hwservice:hwservice_manager find;
+
+hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator)
+
+r_dir_file(hal_graphics_composer_default, sysfs_leds)
+
+allow hal_graphics_composer_default video_device:chr_file rw_file_perms;
+
+# Access /sys/devices/virtual/graphics/fb0
+r_dir_file(hal_graphics_composer_default, sysfs_type)
+
+# Allow composer access hal_light
+hal_client_domain(hal_graphics_composer_default, hal_light);
+allow hal_graphics_composer_default hal_light_hwservice:hwservice_manager find;
+
+dontaudit hal_graphics_composer_default kernel:system module_request;
