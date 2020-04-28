@@ -4,6 +4,8 @@ type per_mgr, domain;
 type per_mgr_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(per_mgr);
 
+allow per_mgr vendor_file:dir r_dir_perms;
+
 #Needed for binder transactions
 binder_use(per_mgr);
 binder_service(per_mgr);
@@ -28,6 +30,7 @@ allow per_mgr ssr_device:chr_file { open read };
 
 #Needed by libmdmdetect to get subsystem info and to check their states
 allow per_mgr sysfs_msm_subsys:dir { open search read };
+allow per_mgr sysfs_msm_subsys:file r_file_perms;
 allow per_mgr sysfs_msm_subsys:lnk_file { read open };
 
 #Needed by pm-proxy to talk to peripheral manager

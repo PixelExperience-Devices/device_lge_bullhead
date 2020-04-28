@@ -22,6 +22,8 @@ wakelock_use(qmux)
 # Access to /sys/devices/virtual/smdpkt/smdcntl*/open_timeout
 allow qmux sysfs_smdcntl_open_timeout:file rw_file_perms;
 
-allow qmux sysfs_msm_subsys:dir { search read open };
+allow qmux sysfs_msm_subsys:dir r_dir_perms;
 allow qmux sysfs_msm_subsys:file rw_file_perms;
-allow qmux sysfs_msm_subsys:lnk_file { read open };
+allow qmux sysfs_msm_subsys:lnk_file r_file_perms;
+
+allow qmux vendor_file:dir r_dir_perms;

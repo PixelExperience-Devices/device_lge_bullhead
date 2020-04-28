@@ -21,3 +21,5 @@ set_prop(atfwd, radio_atfwd_prop)
 
 allow atfwd sysfs_msm_subsys:dir r_dir_perms;
 allow atfwd sysfs_msm_subsys:lnk_file r_file_perms;
+
+allow atfwd vendor_file:dir r_dir_perms;

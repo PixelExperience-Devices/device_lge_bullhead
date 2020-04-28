@@ -26,6 +26,11 @@ allow thermal-engine sysfs_thermal:dir r_dir_perms;
 allow thermal-engine sysfs_thermal:file rw_file_perms;
 allow thermal-engine sysfs_thermal:lnk_file read;
 
+allow thermal-engine sysfs_kgsl:dir r_dir_perms;
+allow thermal-engine sysfs_kgsl:file rw_file_perms;
+allow thermal-engine sysfs:dir r_dir_perms;
+allow thermal-engine sysfs:file rw_file_perms;
+
 #allow thermal-engine thermal-engine:capability { dac_override dac_read_search };
 allow thermal-engine sysfs_leds:dir search;
 allow thermal-engine sysfs_leds:file rw_file_perms;
@@ -34,3 +39,5 @@ allow thermal-engine sysfs_battery:file rw_file_perms;
 
 r_dir_file(thermal-engine, sysfs_msm_subsys)
 r_dir_file(thermal-engine, sysfs_leds)
+
+allow thermal-engine vendor_file:dir r_dir_perms;

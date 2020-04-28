@@ -8,3 +8,5 @@ allow msm_irqbalanced proc_irq:file rw_file_perms;
 
 allow msm_irqbalanced proc_stat:file r_file_perms;
 allow msm_irqbalanced proc_interrupts:file r_file_perms;
+
+allow msm_irqbalanced vendor_file:dir r_dir_perms;
