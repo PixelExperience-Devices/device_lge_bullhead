@@ -401,6 +401,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1
+    debug.stagefright.omx_default_rank=0
+
 # Write Manufacturer & Model information in created media files.
 PRODUCT_PROPERTY_OVERRIDES += \
     media.recorder.show_manufacturer_and_model=true
