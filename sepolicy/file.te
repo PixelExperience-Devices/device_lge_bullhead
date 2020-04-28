@@ -6,6 +6,8 @@ type debugfs_bufinfo, fs_type, debugfs_type;
 type sysfs_power_management, fs_type, sysfs_type;
 type sysfs_surfaceflinger, fs_type, sysfs_type;
 
+type sysfs_rndis, fs_type, sysfs_type;
+
 # file type for irqbalance socket
 type msm_irqbalance_socket, file_type;
 
@@ -67,7 +69,6 @@ type nanohub_lock_file, file_type, data_file_type, core_data_file_type;
 
 # SurfaceFlinger file type for sysfs access
 type sysfs_graphics, sysfs_type, fs_type;
-type sysfs_display, sysfs_type, fs_type;
 
 # Files accessed by qcom-system-daemon
 type sysfs_socinfo, fs_type, sysfs_type;
@@ -99,10 +100,6 @@ type sysfs_wlan0, fs_type, sysfs_type;
 # type for storaged
 type sysfs_mmc, fs_type, sysfs_type;
 
-# types for hal_light_default
-type sysfs_backlight, fs_type, sysfs_type;
-type sysfs_qpnp_25, fs_type, sysfs_type;
-
 # type for init
 type sysfs_g_android_param, fs_type, sysfs_type;
 type sysfs_lge_handle_panic_param, fs_type, sysfs_type;
@@ -113,14 +110,9 @@ type debugfs_rmt_storage, fs_type, debugfs_type;
 # type for perfs
 type sysfs_ksm, fs_type, sysfs_type;
 
-# type for hal_memtrack_default
-type debugfs_mem, fs_type, debugfs_type;
-
-# type for netd
-type sysfs_rmnet, fs_type, sysfs_type;
-
 type netmgrd_socket, file_type;
 type wifihal_socket, file_type;
 
 # type for init
 type sysfs_rfkill0, fs_type, sysfs_type;
+type sysfs_poweroff, sysfs_type, fs_type;

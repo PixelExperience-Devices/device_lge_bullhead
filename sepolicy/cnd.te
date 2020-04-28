@@ -12,6 +12,8 @@ qmux_socket(cnd)
 # cnd is started as root uid/gid and transitions to system
 allow cnd self:capability { setuid setgid net_raw };
 
+allow cnd vendor_file:dir r_dir_perms;
+
 # Note: fsetid is deliberately not included above. fsetid checks are
 # triggered by chmod on a directory or file owned by a group other
 # than one of the groups assigned to the current process to see if
@@ -37,3 +39,5 @@ userdebug_or_eng(`
 ')
 
 wakelock_use(cnd)
+
+allow cnd proc_meminfo:file r_file_perms;

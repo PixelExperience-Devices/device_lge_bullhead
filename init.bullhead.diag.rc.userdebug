@@ -7,7 +7,7 @@ on post-fs-data
 on boot
     chmod 666 /dev/diag
 
-service cnss_diag /system/bin/cnss_diag --q
+service cnss_diag /vendor/bin/cnss_diag --q
     class late_start
     user root
     group root

@@ -1,22 +1,21 @@
 # Debug files
 /sys/kernel/debug/rpm_stats            u:object_r:debugfs_rpm:s0
 /sys/kernel/debug/rpm_master_stats     u:object_r:debugfs_rpm:s0
-/sys/kernel/debug/ipc_logging(/.*)?    u:object_r:debugfs_ipc:s0
 /sys/kernel/debug/dma_buf/bufinfo      u:object_r:debugfs_bufinfo:s0
 
 # NFC labeling
-/dev/pn548          u:object_r:nfc_device:s0
-/data/nfc(/.*)?     u:object_r:nfc_data_file:s0
-/data/vendor/nfc(/.*)? u:object_r:nfc_vendor_data_file:s0
+/dev/pn548                             u:object_r:nfc_device:s0
+/data/nfc(/.*)?                        u:object_r:nfc_data_file:s0
+/data/vendor/nfc(/.*)?                 u:object_r:nfc_vendor_data_file:s0
 
 # Data files
-/data/misc/perfd(/.*)?         u:object_r:perfd_data_file:s0
-/data/misc/radio(/.*)?         u:object_r:radio_data_file:s0
-/data/misc/location(/.*)?      u:object_r:location_data_file:s0
-/data/ramdump(/.*)?            u:object_r:ramdump_data_file:s0
-/data/diag_logs(/.*)?          u:object_r:diag_logs:s0
-/data/fpc.*                    u:object_r:fingerprintd_data_file:s0
-/data/connectivity(/.*)?       u:object_r:cnd_data_file:s0
+/data/misc/perfd(/.*)?           u:object_r:perfd_data_file:s0
+/data/misc/radio(/.*)?           u:object_r:radio_data_file:s0
+/data/misc/location(/.*)?        u:object_r:location_data_file:s0
+/data/ramdump(/.*)?              u:object_r:ramdump_data_file:s0
+/data/diag_logs(/.*)?            u:object_r:diag_logs:s0
+/data/fpc.*                      u:object_r:fingerprintd_data_file:s0
+/data/connectivity(/.*)?         u:object_r:cnd_data_file:s0
 /data/system/nanohub_lock(/.*)?  u:object_r:nanohub_lock_file:s0
 
 # GPU device
@@ -26,8 +25,8 @@
 # Should only be on userdebug device
 /dev/diag                       u:object_r:diag_device:s0
 
-/dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
-/dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
+/dev/socket/netmgr(/.*)?        u:object_r:netmgrd_socket:s0
+/dev/socket/wifihal(/.*)?       u:object_r:wifihal_socket:s0
 
 # Qualcomm MSM Interface (QMI) devices
 /dev/socket/qmux_audio           u:object_r:qmuxd_socket:s0
@@ -44,7 +43,7 @@
 /dev/socket/cnd                                 u:object_r:cnd_socket:s0
 
 # factory reset protection partition
-/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/persistent          u:object_r:frp_block_device:s0
+/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/persistent  u:object_r:frp_block_device:s0
 
 # Block labeling
 /dev/block/mmcblk0                                              u:object_r:mmc_block_device:s0
@@ -61,6 +60,7 @@
 /dev/block/platform/soc\.0/f9824900\.sdhci/by-name/metadata     u:object_r:metadata_block_device:s0
 /dev/block/platform/soc\.0/f9824900\.sdhci/by-name/recovery     u:object_r:recovery_block_device:s0
 /dev/block/platform/soc\.0/f9824900\.sdhci/by-name/misc         u:object_r:misc_block_device:s0
+/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/persist      u:object_r:persist_block_device:s0
 
 /dev/subsys_.*                         u:object_r:ssr_device:s0
 /dev/ramdump_.*                        u:object_r:ramdump_device:s0
@@ -107,7 +107,7 @@
 /vendor/bin/qseecomd               u:object_r:tee_exec:s0
 /vendor/bin/thermal-engine         u:object_r:thermal-engine_exec:s0
 /vendor/bin/msm_irqbalance         u:object_r:msm_irqbalanced_exec:s0
-/vendor/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
+/vendor/bin/ATFWD-daemon           u:object_r:atfwd_exec:s0
 /vendor/bin/subsystem_ramdump      u:object_r:ssr_exec:s0
 /vendor/bin/nanoapp_cmd            u:object_r:nanoapp_cmd_exec:s0
 /vendor/bin/mm-qcamera-daemon      u:object_r:camera_exec:s0
@@ -129,58 +129,38 @@
 /vendor/bin/lowi-server            u:object_r:location_exec:s0
 /vendor/bin/slim_daemon            u:object_r:location_exec:s0
 
-/vendor/bin/hw/android\.hardware\.dumpstate@1\.0-service.bullhead      u:object_r:hal_dumpstate_impl_exec:s0
-/sys/class/leds(/.*)?                                                  u:object_r:sysfs_leds:s0
-/vendor/bin/hw/android\.hardware\.light@2\.0-service.bullhead          u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.dumpstate@1\.0-service.bullhead  u:object_r:hal_dumpstate_impl_exec:s0
+/vendor/bin/hw/android\.hardware\.light@2\.0-service.bullhead      u:object_r:hal_light_default_exec:s0
 
 # Sysfs files used by qmuxd
-/sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout u:object_r:sysfs_smdcntl_open_timeout:s0
+/sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout            u:object_r:sysfs_smdcntl_open_timeout:s0
 
-/sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/hwmon/hwmon2/device(/.*)?                                u:object_r:sysfs_hwmon:s0
-/sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/devices/soc.0/qpnp-fg-18/power_supply/bms/battery_type         u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/battery_current_limit                         u:object_r:sysfs_thermal:s0
-/sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
-/sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
-/sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_performance:s0
-/sys/devices/virtual/graphics/fb([0-2])+(/.*)?                      u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb0/color_temp                        u:object_r:sysfs_display:s0
-/sys/devices/virtual/graphics/fb0/rgb                               u:object_r:sysfs_display:s0
 
-/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel u:object_r:sysfs_thermal:s0
-/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk       u:object_r:sysfs_thermal:s0
-/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk           u:object_r:sysfs_thermal:s0
-/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/reset_count      u:object_r:sysfs_thermal:s0
+# Remove...
+/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel  u:object_r:sysfs_thermal:s0
+/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk        u:object_r:sysfs_thermal:s0
+/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk            u:object_r:sysfs_thermal:s0
+/sys/devices/soc\.0/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/reset_count       u:object_r:sysfs_thermal:s0
 
-/sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
-/sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
-/sys/module/msm_serial_hs/parameters/debug_mask                     u:object_r:sysfs_msmuart_file:s0
-/sys/devices/soc\.0/qcom,bcl[^/]*(/.*)?                             u:object_r:sysfs_thermal:s0
-/sys/devices/soc\.0/fd900000\.qcom,mdss_mdp/caps                    u:object_r:sysfs_graphics:s0
-/sys/devices/soc\.0/qpnp-smbcharger-[0-9a-f]+/power_supply/battery/capacity   u:object_r:sysfs_batteryinfo:s0
-/sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_power_management:s0
-/sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_devices_system_cpu:s0
-/sys/devices/virtual/net/rmnet_ipa0/queues/rx-0/rps_cpus            u:object_r:sysfs_devices_system_cpu:s0
-/sys/devices/soc\.0/qcom,cpubw\.[0-9]+/devfreq/qcom,cpubw\.[0-9]+(/.*)? u:object_r:sysfs_devices_system_cpu:s0
-/sys/devices/soc\.0/f9200000\.ssusb(/.*)?                           u:object_r:sysfs_usb:s0
-/sys/devices/soc\.0/f9966000\.spi_fpc(/.*)?                         u:object_r:sysfs_devices_fingerprint:s0
-/sys/kernel/range/enable_ps_sensor                                  u:object_r:sysfs_camera:s0
-/sys/devices/soc\.0/fd900000\.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight/max_brightness u:object_r:sysfs_thermal:s0
+/sys/devices/msm_hsic_host/host_ready					    u:object_r:sysfs_hsic_host_rdy:s0
+/sys/devices/soc0/.*							    u:object_r:sysfs_socinfo:s0
+/sys/module/msm_serial_hs/parameters/debug_mask				    u:object_r:sysfs_msmuart_file:s0
+/sys/devices/soc\.0/qcom,bcl[^/]*(/.*)?					    u:object_r:sysfs_thermal:s0
+/sys/devices/soc\.0/fd900000\.qcom,mdss_mdp/caps			    u:object_r:sysfs_graphics:s0
+/sys/devices/soc\.0/qpnp-smbcharger-[0-9a-f]+/power_supply/battery/capacity u:object_r:sysfs_batteryinfo:s0
+/sys/module/lpm_levels(/.*)?						    u:object_r:sysfs_power_management:s0
+/sys/module/cpu_boost(/.*)?						    u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/virtual/net/rmnet_ipa0/queues/rx-0/rps_cpus		    u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/soc\.0/qcom,cpubw\.[0-9]+/devfreq/qcom,cpubw\.[0-9]+(/.*)?     u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/soc\.0/f9200000\.ssusb(/.*)?				    u:object_r:sysfs_usb:s0
+/sys/devices/soc\.0/f9966000\.spi_fpc(/.*)?				    u:object_r:sysfs_devices_fingerprint:s0
+/sys/kernel/range/enable_ps_sensor                                          u:object_r:sysfs_camera:s0
 /sys/devices/soc\.0/qpnp-smbcharger-[^/]*/power_supply/battery/system_temp_level                           u:object_r:sysfs_thermal:s0
-/sys/devices/virtual/nanohub/nanohub(/.*)? u:object_r:sysfs_nanoapp_cmd:s0
-/sys/kernel/boot_adsp/boot         u:object_r:sysfs_audio:s0
-/sys/devices/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0(/.*)? u:object_r:sysfs_wlan0:s0
-/sys/kernel/debug/kgsl(/.*)?           u:object_r:debugfs_kgsl:s0
-/sys/devices/soc.0/qpnp-smbcharger-17/power_supply/battery(/.*)? u:object_r:sysfs_battery:s0
-/sys/devices/soc.0/fd900000.qcom,mdss_mdp/qcom,mdss_fb_primary.182/leds/lcd-backlight(/.*)? u:object_r:sysfs_backlight:s0
-/sys/module/g_android/parameters(/.*)? u:object_r:sysfs_g_android_param:s0
-/sys/module/lge_handle_panic/parameters(/.*)? u:object_r:sysfs_lge_handle_panic_param:s0
-/sys/kernel/debug/rmt_storage(/.*)? u:object_r:debugfs_rmt_storage:s0
-/sys/kernel/mm/ksm(/.*)? u:object_r:sysfs_ksm:s0
-/sys/kernel/debug/kgsl/proc/*/mem u:object_r:debugfs_mem:s0
-/sys/devices/soc.0/leds-qpnp-25(/.*) u:object_r:sysfs_qpnp_25:s0
-/sys/devices/virtual/net(/.*)? u:object_r:sysfs_rmnet:s0
+/sys/kernel/boot_adsp/boot                                                  u:object_r:sysfs_audio:s0
+/sys/module/rndis_ipa/parameters/min_cpu_freq                               u:object_r:sysfs_rndis:s0
 
 # NFC hal
 /system/bin/hw/nfc_hal_pn54x       u:object_r:nfc_hal_pn54x_exec:s0

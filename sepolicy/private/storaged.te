@@ -1,3 +1,5 @@
 allow storaged sysfs:dir { search read open };
 allow storaged sysfs:file { read open setattr getattr };
+allow storaged cgroup:dir r_dir_perms;
+allow storaged cgroup:file rw_file_perms;
 allow storaged device:file rw_file_perms;

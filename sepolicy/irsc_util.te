@@ -11,3 +11,5 @@ allowxperm irsc_util self:socket ioctl msm_sock_ipc_ioctls;
 
 create_pty(irsc_util)
 allow irsc_util irsc_util_exec:file execute_no_trans;
+
+allow irsc_util vendor_file:dir r_dir_perms;

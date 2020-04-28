@@ -50,8 +50,6 @@ allow system_server vendor_data_file:dir write;
 
 allow system_server crash_dump:process getpgid;
 
-allow system_server sysfs_backlight:file write;
-allow system_server sysfs_display:file write;
-allow system_server sysfs_qpnp_25:file write;
+allow system_server sysfs_leds:file write;
 
 binder_call(system_server, hal_camera_default)

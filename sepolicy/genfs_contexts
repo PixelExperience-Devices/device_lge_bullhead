@@ -12,10 +12,12 @@ genfscon proc /debugdriver/driverdump            u:object_r:proc_wifi_dbg:s0
 
 # sysfs
 genfscon sysfs /block/mmcblk0                                            u:object_r:sysfs_mmc:s0
+genfscon sysfs /class/uio                                                u:object_r:sysfs_uio:s0
 genfscon sysfs /devices/soc.0/fd8c0000.qcom,msm-cam                      u:object_r:sysfs_camera:s0
 genfscon sysfs /class/rfkill/rfkill0                                     u:object_r:sysfs_rfkill0:s0
 genfscon sysfs /class/kgsl                                               u:object_r:sysfs_kgsl:s0
 genfscon sysfs /devices/soc.0/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0       u:object_r:sysfs_kgsl:s0
+#genfscon sysfs /devices/soc.0/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0      u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /class/hwmon/hwmon2/device                                u:object_r:sysfs_hwmon:s0
 genfscon sysfs /class/thermal                                            u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/thermal                                  u:object_r:sysfs_thermal:s0
@@ -23,22 +25,38 @@ genfscon sysfs /module/msm_thermal                                       u:objec
 genfscon sysfs /module/msm_performance                                   u:object_r:sysfs_performance:s0
 genfscon sysfs /bus/msm_subsys                                           u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/soc.0/fdce0000.qcom,venus                        u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/soc.0/fc880000.qcom,mss                          u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/soc.0/qcom,cnss.32                               u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/soc.0/f9924000.i2c                               u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/soc.0/fe200000.qcom,lpass                        u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /module/subsystem_restart                                 u:object_r:sysfs_msm_subsys_restart:s0
+genfscon sysfs /module/msm_poweroff                                      u:object_r:sysfs_poweroff:s0
+
+genfscon sysfs /devices/soc.0/fc4b8000.qcom,msm-core                     u:object_r:sysfs_uio:s0
+genfscon sysfs /devices/soc.0/0.qcom,sensors_sharedmem                   u:object_r:sysfs_uio:s0
+genfscon sysfs /devices/soc.0/0.qcom,mdm_sharedmem                       u:object_r:sysfs_uio:s0
+genfscon sysfs /devices/soc.0/0.qcom,dsp_sharedmem                       u:object_r:sysfs_uio:s0
+genfscon sysfs /devices/soc.0/0.qcom,rmtfs_sharedmem                     u:object_r:sysfs_uio:s0
+
 genfscon sysfs /module/lpm_levels                                        u:object_r:sysfs_power_management:s0
 genfscon sysfs /module/cpu_boost                                         u:object_r:sysfs_devices_system_cpu:s0
 genfscon sysfs /devices/soc.0/f9200000.ssusb                             u:object_r:sysfs_usb:s0
 genfscon sysfs /devices/soc.0/f9966000.spi_fpc                           u:object_r:sysfs_devices_fingerprint:s0
 genfscon sysfs /devices/virtual/nanohub/nanohub                          u:object_r:sysfs_nanoapp_cmd:s0
-genfscon sysfs /devices/soc.0/fd900000.qcom,mdss_mdp/qcom,mdss_fb_primary.182/leds/lcd-backlight    u:object_r:sysfs_backlight:s0
-genfscon sysfs /devices/soc.0/qpnp-smbcharger-17/power_supply/battery    u:object_r:sysfs_battery:s0
 genfscon sysfs /module/g_android/parameters                              u:object_r:sysfs_g_android_param:s0
 genfscon sysfs /module/lge_handle_panic/parameters                       u:object_r:sysfs_lge_handle_panic_param:s0
 genfscon sysfs /kernel/mm/ksm                                            u:object_r:sysfs_ksm:s0
 genfscon sysfs /devices/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0   u:object_r:sysfs_wlan0:s0
+genfscon sysfs /devices/virtual/graphics/fb0                             u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/virtual/graphics/fb1                             u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc.0/qpnp-smbcharger-17/power_supply/battery    u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/soc.0/leds-qpnp-25/leds                          u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc.0/fd900000.qcom,mdss_mdp/qcom,mdss_fb_primary.182/leds/lcd-backlight     u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc.0/qcom,camera-flash.82/leds                                              u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc.0/qpnp-flash-led-26/leds                                                 u:object_r:sysfs_leds:s0
 
 # debugfs
 genfscon debugfs /kgsl		  u:object_r:debugfs_kgsl:s0
+#genfscon debugfs /kgsl/proc      u:object_r:debugfs_kgsl:s0
 genfscon debugfs /ipc_logging     u:object_r:debugfs_ipc:s0
 genfscon debugfs /rmt_storage     u:object_r:debugfs_rmt_storage:s0

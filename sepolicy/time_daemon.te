@@ -17,8 +17,12 @@ allow time_daemon smem_log_device:chr_file rw_file_perms;
 
 allow time_daemon rtc_device:chr_file r_file_perms;
 
-allow time_daemon sysfs_msm_subsys:dir search;
-#allow time_daemon sysfs_msm_subsys:file r_file_perms;
+allow time_daemon sysfs_msm_subsys:dir r_dir_perms;
+allow time_daemon sysfs_msm_subsys:file r_file_perms;
 allow time_daemon sysfs_msm_subsys:lnk_file { read open };
 
-#qmux_socket(time_daemon)
+qmux_socket(time_daemon)
+
+allow time_daemon vendor_file:dir r_dir_perms;
+
+allow time_daemon system_data_file:file r_file_perms;
