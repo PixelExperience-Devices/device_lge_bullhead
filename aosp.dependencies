@@ -12,12 +12,6 @@
     "remote"      : "github"
   },
   {
-    "repository"  : "lakgarg/device_google_contexthub",
-    "target_path" : "device/google/contexthub",
-    "branch"      : "master",
-    "remote"      : "github"
-  },
-  {
     "repository"  : "arter97/arm64-gcc",
     "target_path" : "prebuilts/arm64-gcc",
     "branch"      : "master",
