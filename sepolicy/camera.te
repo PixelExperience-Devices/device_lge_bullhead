@@ -51,3 +51,5 @@ allow camera debugfs_kgsl:file { read write getattr setattr };
 
 allow camera hal_camera_default:fd use;
 allow camera ion_device:chr_file write;
+allow camera proc:file read;
+allow camera sysfs:file read;
