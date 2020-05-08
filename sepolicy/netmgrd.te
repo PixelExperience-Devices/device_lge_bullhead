@@ -74,3 +74,6 @@ allow netmgrd toolbox_exec:file rx_file_perms;
 
 #Allow netmgrd to use wakelock
 wakelock_use(netmgrd)
+
+dontaudit netmgrd servicemanager:binder call;
+dontaudit netmgrd dnsresolver_service:service_manager find;
