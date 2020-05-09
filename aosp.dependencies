@@ -1,20 +1,14 @@
 [
   {
-    "repository"  : "lakgarg/bullhead",
+    "repository"  : "svlog/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "master",
+    "branch"      : "stable",
     "remote"      : "github"
   },
   {
     "repository"  : "lakgarg/proprietary_vendor_lge",
     "target_path" : "vendor/lge",
     "branch"      : "10",
-    "remote"      : "github"
-  },
-  {
-    "repository"  : "arter97/arm64-gcc",
-    "target_path" : "prebuilts/arm64-gcc",
-    "branch"      : "master",
     "remote"      : "github"
   },
   {
