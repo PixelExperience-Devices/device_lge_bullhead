@@ -61,7 +61,6 @@
 /system/bin/subsystem_ramdump
 /system/bin/test_diag
 /system/bin/thermal-engine
-/system/bin/time_daemon
 /system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 /system/etc/acdbdata/MTP/MTP_General_cal.acdb
 /system/etc/acdbdata/MTP/MTP_Global_cal.acdb

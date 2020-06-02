@@ -228,9 +228,6 @@ on post-fs-data
     write /sys/bus/i2c/devices/2-0020/check_fw 1
     write /sys/devices/soc.0/f9924000.i2c/power/control on
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
     # Create the directories used by the Wireless subsystem
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
@@ -402,11 +399,6 @@ service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
-
-service time_daemon /vendor/bin/time_daemon
-    class late_start
-    user root
-    group root
 
 service charger /charger
     class charger
