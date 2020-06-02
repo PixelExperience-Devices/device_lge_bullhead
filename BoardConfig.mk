@@ -34,6 +34,8 @@ TARGET_NO_BOOTLOADER := true
 WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
 
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Inline kernel building
 #KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/arm64-gcc/bin
 #KERNEL_TOOLCHAIN_PREFIX := aarch64-elf-
