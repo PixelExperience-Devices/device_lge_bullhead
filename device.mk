@@ -666,6 +666,17 @@ persist.sys.usb.config=adb
 ro.secure=0
 ro.adb.secure=0
 
+# Props for ims features
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.rat_on=combine \
+    persist.radio.data_ltd_sys_ind=1 \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.calls.on.ims=1
+    
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/privapp-permissions-bullhead.xml:system/etc/permissions/privapp-permissions-bullhead.xml
