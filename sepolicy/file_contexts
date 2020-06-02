@@ -165,6 +165,10 @@
 # NFC hal
 /system/bin/hw/nfc_hal_pn54x       u:object_r:nfc_hal_pn54x_exec:s0
 
+# TimeKeep
+/sys/devices/qpnp-rtc-17/rtc/rtc0(/.*)?                                            u:object_r:sysfs_rtc:s0
+/vendor/bin/timekeep                                                               u:object_r:timekeep_exec:s0
+
 # files in firmware
 /firmware(/.*)?                    u:object_r:firmware_file:s0
 

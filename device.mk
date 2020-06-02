@@ -372,6 +372,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml
 
+# TimeKeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+    
 # GoogleCamera
 $(call inherit-product, packages/apps/GoogleCamera/config.mk)
 
