@@ -477,3 +477,6 @@ on property:init.svc.media=restarting
 
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
+    
+on property:vold.decrypt=trigger_restart_framework
+    restart camera-provider-2-4
