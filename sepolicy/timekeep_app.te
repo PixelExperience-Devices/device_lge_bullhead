@@ -21,5 +21,9 @@ allow timekeep_app time_data_file:file create_file_perms;
 allow timekeep_app sysfs_rtc:dir { search };
 allow timekeep_app sysfs_rtc:{ file lnk_file } r_file_perms;
 
+allow timekeep_app sysfs:file { read open getattr };
+allow timekeep_app vendor_data_file:dir { write add_name create};
+allow timekeep_app vendor_data_file:file { write open getattr};
+
 # Set the persist.vendor.timeadjust property
 set_prop(timekeep_app, vendor_timekeep_prop)
