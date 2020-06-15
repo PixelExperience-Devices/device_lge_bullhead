@@ -20,3 +20,8 @@ set_prop(timekeep, vendor_timekeep_prop)
 # Read /sys/class/rtc/rtc0/since_epoch
 allow timekeep sysfs_rtc:dir search;
 allow timekeep sysfs_rtc:{ file lnk_file } r_file_perms;
+
+allow timekeep vendor_file:dir read;
+allow timekeep sysfs:file { read open };
+allow timekeep vendor_data_file:dir { add_name write };
+allow timekeep vendor_data_file:file { open write create getattr};

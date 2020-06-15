@@ -1,0 +1,2 @@
+allow vendor_init time_data_file:dir { search etattr };
+allow vendor_init time_data_file:file setattr;
