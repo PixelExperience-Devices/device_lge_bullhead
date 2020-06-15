@@ -1,8 +1,8 @@
 [
   {
-    "repository"  : "svlog/kernel_lge_bullhead",
+    "repository"  : "minecrimex/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "stable",
+    "branch"      : "upstream",
     "remote"      : "github"
   },
   {
