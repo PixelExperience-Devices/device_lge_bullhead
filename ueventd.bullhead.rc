@@ -65,7 +65,8 @@
 /dev/hsicctl14            0640   radio      radio
 /dev/hsicctl15            0640   radio      radio
 /dev/hsicctl16            0640   radio      radio
-/dev/qseecom              0660   system     drmrpc
+#changhua.li modify from 660 to 666 for alipay use tz
+/dev/qseecom              0666   system     drmrpc
 # permissions for audio
 /dev/msm_audio_cal        0660   system     audio
 /dev/msm_rtac             0660   system     audio
