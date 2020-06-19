@@ -353,10 +353,10 @@ on property:ro.boot.hardware.sku=LGH798
 service thermal-engine /vendor/bin/thermal-engine
     class main
     user root
-    socket thermal-send-client stream 0660 system system
+    socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
-    socket thermal-recv-passive-client stream 0660 system system
-    group root radio system
+    socket thermal-recv-passive-client stream 0666 system system
+    group root
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets \
