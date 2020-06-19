@@ -2,7 +2,7 @@
   {
     "repository"  : "minecrimex/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "add_earlysuspend",
+    "branch"      : "upstream",
     "remote"      : "github"
   },
   {
