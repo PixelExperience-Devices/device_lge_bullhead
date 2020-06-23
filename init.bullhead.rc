@@ -65,6 +65,8 @@ on property:sys.boot_completed=1
 
     restart cameraserver
 
+    restart cameraserver
+
 on init
     # Load persistent dm-verity state
     verity_load_state
@@ -399,7 +401,7 @@ service charger /charger
     critical
     seclabel u:r:charger:s0
 
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class main
     user camera
     group camera system inet input graphics
@@ -465,12 +467,13 @@ service devstart_sh /vendor/bin/init.qcom.devstart.sh
 
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
+    symlink /system/lib64/libashmemd_client.so /system/apex/com.android.media.swcodec/lib64/libashmemd_client.so
 
 on property:init.svc.media=restarting
-    restart qcamerasvr
+    restart vendor.qcamerasvr
 
 on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
-    
+    restart vendor.qcamerasvr
+
 on property:vold.decrypt=trigger_restart_framework
-    restart camera-provider-2-4
+    restart vendor.camera-provider-2-4
