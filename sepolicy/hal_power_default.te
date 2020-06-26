@@ -1,2 +1,2 @@
 allow hal_power_default debugfs_rpm:file { open read getattr };
-
+allow hal_power_default perfd_data_file:sock_file write;
