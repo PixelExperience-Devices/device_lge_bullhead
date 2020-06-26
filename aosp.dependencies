@@ -1,14 +1,14 @@
 [
   {
-    "repository"  : "svlog/kernel_lge_bullhead",
+    "repository"  : "minecrimex/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "stable",
+    "branch"      : "upstream",
     "remote"      : "github"
   },
   {
-    "repository"  : "lakgarg/proprietary_vendor_lge",
+    "repository"  : "PixelExperience-Devices/vendor_lge",
     "target_path" : "vendor/lge",
-    "branch"      : "10",
+    "branch"      : "ten",
     "remote"      : "github"
   },
   {
