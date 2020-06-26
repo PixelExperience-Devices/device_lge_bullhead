@@ -571,6 +571,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.tnr.preview=0 \
     persist.camera.tnr.video=0
+    
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1
 
 # Incoming number (b/23529711)
 PRODUCT_PROPERTY_OVERRIDES += \
