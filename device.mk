@@ -585,8 +585,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.bullhead \
-    android.hardware.power@1.0-impl \
+      android.hardware.power@1.2-service.bullhead
 
 # Thermal HAL
 PRODUCT_PACKAGES += \

@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2013, 2018-2019 The Linux Foundation. All rights reserved.
+ * Copyright (c) 2019, The Linux Foundation. All rights reserved.
  * Copyright (C) 2017-2019 The LineageOS Project
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
- * *    * Redistributions of source code must retain the above copyright
+ *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above
  *       copyright notice, this list of conditions and the following
@@ -27,52 +27,62 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef __POWER_COMMON_H__
-#define __POWER_COMMON_H__
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#define LOG_TAG "android.hardware.power@1.2-service-bullhead"
 
-#define INTERACTIVE_GOVERNOR "interactive"
-#define SCHEDUTIL_GOVERNOR "schedutil"
-
-#define HINT_HANDLED (0)
-#define HINT_NONE (-1)
+// #define LOG_NDEBUG 0
 
 #include <hardware/power.h>
+#include <hidl/HidlTransportSupport.h>
+#ifdef ARCH_ARM_32
+#include <hwbinder/ProcessState.h>
+#endif
+#include <log/log.h>
+#include "Power.h"
 
-enum CPU_GOV_CHECK {
-    CPU0 = 0,
-    CPU1 = 1,
-    CPU2 = 2,
-    CPU3 = 3,
-    CPU4 = 4,
-    CPU5 = 5
-};
+using android::OK;
+using android::sp;
+using android::status_t;
 
-enum {
-    PROFILE_POWER_SAVE = 0,
-    PROFILE_BALANCED,
-    PROFILE_HIGH_PERFORMANCE,
-    PROFILE_BIAS_POWER,
-    PROFILE_BIAS_PERFORMANCE
-};
+// libhwbinder:
+using android::hardware::configureRpcThreadpool;
+using android::hardware::joinRpcThreadpool;
 
-void power_init(void);
-void power_hint(power_hint_t hint, void* data);
-void set_interactive(int on);
-int get_number_of_profiles();
+// Generated HIDL files
+using android::hardware::power::V1_2::implementation::Power;
 
-#define ARRAY_SIZE(x) (sizeof((x)) / sizeof((x)[0]))
-#define CHECK_HANDLE(x) ((x) > 0)
-#define UNUSED(x) UNUSED_##x __attribute__((__unused__))
-
-// Custom Lineage hints
-const static power_hint_t POWER_HINT_SET_PROFILE = (power_hint_t)0x00000111;
-
-#ifdef __cplusplus
-}
+int main() {
+#ifdef ARCH_ARM_32
+    android::hardware::ProcessState::initWithMmapSize((size_t)16384);
 #endif
 
-#endif  //__POWER_COMMON_H___
+    status_t status;
+    android::sp<Power> service = nullptr;
+
+    ALOGI("Power HAL Service 1.2 is starting.");
+
+    service = new Power();
+    if (service == nullptr) {
+        ALOGE("Can not create an instance of Power HAL interface.");
+
+        goto shutdown;
+    }
+
+    configureRpcThreadpool(1, true /*callerWillJoin*/);
+
+    status = service->registerAsSystemService();
+    if (status != OK) {
+        ALOGE("Could not register service for Power HAL(%d).", status);
+        goto shutdown;
+    }
+
+    ALOGI("Power Service is ready");
+    joinRpcThreadpool();
+    // Should not pass this line
+
+shutdown:
+    // In normal operation, we don't expect the thread pool to exit
+
+    ALOGE("Power Service is shutting down");
+    return 1;
+}
