@@ -53,3 +53,5 @@ allow camera hal_camera_default:fd use;
 allow camera ion_device:chr_file write;
 allow camera proc:file r_file_perms;
 allow camera sysfs:file r_file_perms;
+
+allow camera mnt_vendor_file:dir search;
