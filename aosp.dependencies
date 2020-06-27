@@ -1,15 +1,15 @@
 [
   {
-    "repository"  : "svlog/kernel_lge_bullhead",
+    "repository"  : "PixelExperience-Devices/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "stable",
+    "branch"      : "ten",
     "remote"      : "github"
   },
   {
-    "repository"  : "lakgarg/proprietary_vendor_lge",
-    "target_path" : "vendor/lge",
-    "branch"      : "10",
-    "remote"      : "github"
+    "repository"  : "vendor_lge_bullhead",
+    "target_path" : "vendor/lge/bullhead",
+    "branch"      : "ten",
+    "remote"      : "pixel-devices-bitbucket"
   },
   {
     "repository"  : "lakgarg/packages_apps_GoogleCamera",
