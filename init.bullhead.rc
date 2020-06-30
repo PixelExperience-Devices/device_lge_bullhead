@@ -65,7 +65,6 @@ on property:sys.boot_completed=1
 
     stop cameraserver
     start vendor.qcamerasvr
-    
     start cameraserver
 
 on init
