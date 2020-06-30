@@ -1,8 +1,8 @@
 [
   {
-    "repository"  : "minecrimex/kernel_lge_bullhead",
+    "repository"  : "PixelExperience-Devices/kernel_lge_bullhead",
     "target_path" : "kernel/lge/bullhead",
-    "branch"      : "upstream",
+    "branch"      : "ten",
     "remote"      : "github"
   },
   {
