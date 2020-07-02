@@ -63,9 +63,7 @@ on property:sys.boot_completed=1
     write /sys/block/dm-2/queue/read_ahead_kb 128
     write /sys/block/mmcblk0/queue/iostats 1
 
-    stop cameraserver
-    start vendor.qcamerasvr
-    start cameraserver
+    restart cameraserver
 
 on init
     # Load persistent dm-verity state
@@ -401,11 +399,10 @@ service charger /charger
     critical
     seclabel u:r:charger:s0
 
-service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
-    class late_start
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
+    class main
     user camera
     group camera system inet input graphics
-    disabled
     writepid /dev/cpuset/system-background/tasks
 
 on property:persist.radio.atfwd.start=false
@@ -469,5 +466,11 @@ service devstart_sh /vendor/bin/init.qcom.devstart.sh
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
 
+on property:init.svc.media=restarting
+    restart qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart qcamerasvr
+    
 on property:vold.decrypt=trigger_restart_framework
-    restart vendor.camera-provider-2-4
+    restart camera-provider-2-4
