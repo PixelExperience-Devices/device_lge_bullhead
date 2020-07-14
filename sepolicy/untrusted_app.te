@@ -1,6 +1,8 @@
 allow untrusted_app kernel:system module_request;
 allow untrusted_app debugfs_kgsl:dir { search read open };
 allow untrusted_app debugfs_kgsl:file { write getattr setattr };
+allow untrusted_app proc_asound:dir search;
+allow untrusted_app proc_irq:dir search;
 allow untrusted_app_25 debugfs_kgsl:dir { search read open };
 allow untrusted_app_25 debugfs_kgsl:file { write getattr setattr };
 allow untrusted_app_27 debugfs_kgsl:dir { search read open };
