@@ -9,7 +9,7 @@
     "repository"  : "vendor_lge_bullhead",
     "target_path" : "vendor/lge/bullhead",
     "branch"      : "ten",
-    "remote"      : "pixel-devices-bitbucket"
+    "remote"      : "pixel-devices-blobs"
   },
   {
     "repository"  : "lakgarg/packages_apps_GoogleCamera",
