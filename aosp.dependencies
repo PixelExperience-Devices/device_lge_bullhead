@@ -6,10 +6,10 @@
     "remote"      : "github"
   },
   {
-    "repository"  : "PixelExperience-Devices/vendor_lge",
+    "repository"  : "vendor_lge_bullhead",
     "target_path" : "vendor/lge",
     "branch"      : "ten",
-    "remote"      : "github"
+    "remote"      : "pixel-devices-blobs"
   },
   {
     "repository"  : "lakgarg/packages_apps_GoogleCamera",
